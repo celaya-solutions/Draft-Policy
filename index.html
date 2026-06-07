@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Paso Data Centers: Water, Power, and What It Means for You</title>
+<meta name="description" content="An independent, plain-language guide to the data centers coming to the El Paso region: how much water and power they need, how much we have, and what a fair city rule would do. Prepared by Celaya Solutions Research LLC.">
+<meta name="author" content="Celaya Solutions Research LLC">
+<meta property="og:title" content="El Paso Data Centers: The Numbers You Should See">
+<meta property="og:description" content="How much water and power do the new data centers need? How much do we have left? The sourced numbers, in plain language.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://celaya-solutions.github.io/Draft-Policy/">
+<meta property="og:image" content="https://celaya-solutions.github.io/Draft-Policy/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Celaya Solutions Research LLC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Paso Data Centers: The Numbers You Should See">
+<meta name="twitter:description" content="How much water and power do the new data centers need? How much do we have left? The sourced numbers, in plain language.">
+<meta name="twitter:image" content="https://celaya-solutions.github.io/Draft-Policy/assets/og-image.png">
+<meta name="theme-color" content="#0e4d64">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#15212c; --muted:#5a6675;
+    --navy:#0e4d64; --navy-d:#0a3a4d; --gold:#f2a900; --gold-d:#b9780a;
+    --red:#c0392b; --green:#1e8a5a; --line:#e4e8eb; --soft:#f5f8f9; --soft2:#eef3f5;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --wrap:880px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+  a{color:var(--navy)}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+
+  /* top nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav .row{display:flex;align-items:center;gap:14px;max-width:var(--wrap);margin:0 auto;padding:10px 22px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy-d);text-decoration:none;font-size:15px;white-space:nowrap}
+  .navlinks{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  .navlinks a{font-size:13px;color:var(--muted);text-decoration:none;padding:6px 9px;border-radius:6px;font-weight:600}
+  .navlinks a:hover{background:var(--soft2);color:var(--navy-d)}
+
+  /* hero */
+  .hero{background:linear-gradient(180deg,#0e4d64 0%,#0a3a4d 100%);color:#fff;padding:46px 0 40px}
+  .hero .kick{text-transform:uppercase;letter-spacing:2.5px;font-size:12px;font-weight:700;color:var(--gold)}
+  .hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 14px;font-weight:700}
+  .hero p{font-size:19px;color:#d8e3e8;max-width:680px}
+  .pill{display:inline-block;margin-top:20px;background:var(--gold);color:#3a2a00;font-weight:700;padding:11px 18px;border-radius:8px;text-decoration:none;font-size:15px}
+  .pill.ghost{background:transparent;color:#fff;border:1px solid #5b8294;margin-left:8px}
+  .badge{margin-top:18px;font-size:13px;color:#bcd0d8;border-left:3px solid var(--gold);padding-left:12px}
+
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-size:clamp(23px,3.6vw,30px);color:var(--navy-d);margin-bottom:6px}
+  .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700;color:var(--gold-d);margin-bottom:6px}
+  h3{font-size:19px;color:var(--navy);margin:24px 0 8px}
+  p{margin-bottom:14px}
+  .lead{font-size:19px;color:#2b3744}
+  ul,ol{margin:0 0 14px 22px}
+  li{margin-bottom:8px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+  .card{background:var(--soft);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:10px;padding:18px}
+  .card.gold{border-top-color:var(--gold)} .card.red{border-top-color:var(--red)}
+  .num{font-family:var(--serif);font-size:32px;font-weight:700;color:var(--navy-d);line-height:1.04}
+  .card.red .num{color:var(--red)}
+  .card .lbl{font-size:14.5px;color:#3a4654;margin-top:6px}
+  .src{font-size:12px;color:#8a93a0;margin-top:9px}
+
+  .callout{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 20px;margin:20px 0}
+  .q{font-family:var(--serif);font-size:21px;color:var(--navy-d);font-style:italic;margin-bottom:8px}
+  .analogy{background:var(--soft2);border-radius:10px;padding:16px 18px;margin:18px 0;font-size:16px}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+  th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:14px}
+  td{padding:10px 12px;border:1px solid var(--line)} tr:nth-child(even) td{background:var(--soft)}
+
+  .do{background:#f2faf5;border:1px solid #cfe8da;border-radius:10px;padding:18px 20px;margin:18px 0}
+  .asks{counter-reset:a;list-style:none;margin-left:0}
+  .asks li{counter-increment:a;position:relative;padding-left:38px;margin-bottom:10px}
+  .asks li::before{content:counter(a);position:absolute;left:0;top:1px;width:26px;height:26px;background:var(--navy);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+
+  .docs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+  .doc{display:block;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s}
+  .doc:hover{border-color:var(--navy);box-shadow:0 2px 10px rgba(14,77,100,.08)}
+  .doc .t{font-weight:700;color:var(--navy-d)} .doc .d{font-size:13.5px;color:var(--muted);margin-top:3px} .doc .x{font-size:12px;color:var(--gold-d);font-weight:700;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+
+  .lab{background:var(--soft);border-radius:12px;padding:22px;margin-top:8px}
+  .es{background:var(--soft2);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:8px 0}
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13.5px}
+  .disc{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--muted);margin:18px 0}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;border:none;cursor:pointer}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.navlinks{display:none}}
+  @media print{.nav,.hero .pill,.btn{display:none}.hero{background:#fff;color:#000}.hero p{color:#333}.hero .kick,.hero h1{color:#000}body{font-size:11pt}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="row">
+    <a class="brand" href="#top">
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="19" fill="#f2a900"/><g stroke="#f2a900" stroke-width="6" stroke-linecap="round"><line x1="50" y1="7" x2="50" y2="21"/><line x1="50" y1="79" x2="50" y2="93"/><line x1="7" y1="50" x2="21" y2="50"/><line x1="79" y1="50" x2="93" y2="50"/><line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/><line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/></g></svg>
+      Celaya Solutions Research
+    </a>
+    <div class="navlinks">
+      <a href="#water">Water</a>
+      <a href="#power">Power</a>
+      <a href="#building">What's Coming</a>
+      <a href="#rule">The Fix</a>
+      <a href="#act">Take Action</a>
+      <a href="#docs">Documents</a>
+      <a href="#lab">The Lab</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kick">El Paso, the Sun City &middot; Community Briefing</div>
+    <h1>Data Centers, Water, and Power: The Numbers You Should See</h1>
+    <p>Giant computer warehouses are coming to our region. We pulled the public records and did the math nobody published. Here is how much water and electricity they need, how much we have, and the one question to ask before any deal is approved.</p>
+    <a class="pill" href="#water">See the numbers</a>
+    <a class="pill ghost" href="#act">What you can do</a>
+    <div class="badge">An independent briefing by Celaya Solutions Research LLC. Not an official City of El Paso publication. Every number is sourced. Check it yourself.</div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="why">
+  <div class="wrap">
+    <p class="lead">A data center is a huge building full of computers. They run hot, so they drink water and power to stay cool and switched on. We are not against technology. We build it. The question is simple and fair: <strong>do we have enough water and power for this, and who pays if we do not?</strong></p>
+    <p>This page is written by an El Paso research lab, in plain language, so any resident can understand what is happening and speak up. The full legal and technical documents are linked at the bottom.</p>
+  </div>
+</section>
+
+<!-- WATER -->
+<section id="water">
+  <div class="wrap">
+    <div class="eyebrow">The Water</div>
+    <h2>Three numbers that decide everything</h2>
+    <div class="cards">
+      <div class="card"><div class="num">105 million</div><div class="lbl">gallons of water El Paso uses every single day right now.</div><div class="src">Texas Tribune, 2025</div></div>
+      <div class="card gold"><div class="num">1.56 million</div><div class="lbl">gallons a day the new data centers could need at full size.</div><div class="src">Do&ntilde;a Ana County MOU; KVIA / El Paso Matters</div></div>
+      <div class="card red"><div class="num">8.7 million</div><div class="lbl">gallons a day. That is our whole leftover cushion.</div><div class="src">U.S. Bureau of Reclamation</div></div>
+    </div>
+    <div class="analogy">The data centers would use only about <strong>1.5% of the water we use now</strong>. That sounds tiny. But it is <strong>17.9% of the cushion we have left</strong>. Think of a paycheck: after rent and bills you have $87 left, and someone asks for $16. That is 1.6% of your pay, but 18% of what is left. That is the line between making it to the end of the month and not.</div>
+    <h3>The question nobody answered</h3>
+    <div class="callout">
+      <div class="q">"Which water-supply number are you using when you say we have enough, and where is it published?"</div>
+      <p>If you count the water we actually pump and treat each day, we are already at the limit. If you count a bigger number that exists only on paper, there is room. <strong>No official has said which number they used.</strong> If they cannot answer with a source you can check, the decision was based on trust, not math. Trust is not a water source.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POWER -->
+<section id="power">
+  <div class="wrap">
+    <div class="eyebrow">The Power</div>
+    <h2>Our grid is closer to the edge than people think</h2>
+    <div class="cards">
+      <div class="card"><div class="num">2,300 MW</div><div class="lbl">the most electricity El Paso Electric can make.</div><div class="src">EPE CEO, 2025</div></div>
+      <div class="card gold"><div class="num">2,173 MW</div><div class="lbl">our highest demand ever, on a 110&deg; summer day.</div><div class="src">EPE, 2020</div></div>
+      <div class="card red"><div class="num">127 MW</div><div class="lbl">the cushion between them. Two data centers alone want 250.</div><div class="src">Celaya load study</div></div>
+    </div>
+    <p>Two of the three projects (Meta in El Paso and Wiwynn in Socorro) would pull about <strong>250 megawatts</strong> from the grid. That is roughly <strong>double</strong> the cushion we have. To handle it, the utility has proposed <strong>$3.5 billion</strong> in upgrades and a <strong>$22-a-month</strong> rate increase that the City Council rejected.</p>
+    <div class="analogy"><strong>Here is the math you can do yourself.</strong> Capacity 2,300, minus peak 2,173, equals a <strong>127 MW</strong> cushion. Add 250 MW of new data-center load and demand becomes 2,423, which is <em>more</em> than the 2,300 we can make. The grid goes over the line. That is why the upgrades and the rate hike exist. The real question is who should pay for them: the company that caused the need, or you?</div>
+  </div>
+</section>
+
+<!-- BUILDING -->
+<section id="building">
+  <div class="wrap">
+    <div class="eyebrow">What Is Being Built</div>
+    <h2>Three projects, two states, one shared basin</h2>
+    <table>
+      <tr><th>Project</th><th>Where</th><th>Water (full size)</th><th>Power</th></tr>
+      <tr><td>Meta</td><td>Northeast El Paso, TX</td><td>up to 1.5 million gal/day</td><td>~100 MW from the grid</td></tr>
+      <tr><td>Wiwynn</td><td>Socorro, TX</td><td>not yet public</td><td>~150 MW from the grid</td></tr>
+      <tr><td>Project Jupiter (Oracle / OpenAI)</td><td>Do&ntilde;a Ana County, NM</td><td>claimed 20,000&ndash;60,000 gal/day</td><td>its own gas plant, up to 2,880 MW</td></tr>
+    </table>
+    <p>These sit on the <strong>same water basin (the Mesilla Bolson) and the same air</strong>. Yet no public study adds the three of them together. Project Jupiter alone would run a <strong>natural-gas power plant</strong> around the clock, and its permit filings describe hundreds of tons of air pollution and millions of tons of greenhouse gases per year. The community in New Mexico is challenging it in court (Case No. D-307-CV-2025-02766).</p>
+    <div class="disc">A note on fairness: this briefing does not single out any one company. Each project is following the rules that exist today. The point is that the rules are too weak, and a fair fix applies the same standards to every large data center.</div>
+  </div>
+</section>
+
+<!-- THE FIX -->
+<section id="rule">
+  <div class="wrap">
+    <div class="eyebrow">The Fix</div>
+    <h2>What a fair city rule would do</h2>
+    <p>We drafted a model ordinance (a city law) that sets clear, equal terms for any large data center. It does not ban them. It makes them prove they will not harm our water and power, and pay their own way.</p>
+    <ul>
+      <li><strong>Public hearing and Council vote</strong> (a special permit) for every big data center. No more quiet approvals.</li>
+      <li>Keep them <strong>1,000 feet</strong> from homes, schools, parks, hospitals, and churches.</li>
+      <li><strong>Cap their water</strong>, require recycled water for cooling, and <strong>measure and publish</strong> use every three months.</li>
+      <li>Make them <strong>pay 100% of the power and water upgrades they cause</strong>, so your bill does not rise to cover them.</li>
+      <li>Require a <strong>cleanup bond</strong> before they open, so an empty building never becomes the public's problem.</li>
+      <li><strong>Daily fines</strong> and loss of permit if they break the rules.</li>
+    </ul>
+    <p>It is written to hold up in court: facially neutral, grounded in sourced facts, and built on existing federal, state, and Texas law. The full ordinance and the evidence behind it are in the <a href="#docs">Documents</a> section.</p>
+  </div>
+</section>
+
+<!-- ACTION -->
+<section id="act">
+  <div class="wrap">
+    <div class="eyebrow">Take Action</div>
+    <h2>What you can do this week</h2>
+    <div class="do">
+      <ul>
+        <li><strong>Comment now.</strong> The City released a draft data-center policy for public review. Learn more and comment at <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</li>
+        <li><strong>Ask the one question</strong> (above) of your City Council member and county commissioner. Make them show the number.</li>
+        <li><strong>Speak for three minutes</strong> at a Council meeting. Agendas at <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</li>
+        <li><strong>Share this page</strong> with your neighbors, your church, and small-business owners.</li>
+      </ul>
+    </div>
+    <h3>The five asks (say these every time)</h3>
+    <ol class="asks">
+      <li>Adopt enforceable standards, not just a policy paper.</li>
+      <li>Require a <strong>cumulative</strong> water-and-power study before any approval.</li>
+      <li>Make data centers <strong>pay their own</strong> upgrade costs, with no rate hikes on residents.</li>
+      <li>Require a <strong>teardown bond</strong> before they open.</li>
+      <li><strong>Publish the supply number.</strong> If you cannot show the math, do not approve.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="docs">
+  <div class="wrap">
+    <div class="eyebrow">The Receipts</div>
+    <h2>Documents you can read and share</h2>
+    <p>Everything here is public and free to use. The legal documents are drafts prepared for community and Council use, and should be reviewed by counsel before any official action.</p>
+    <div class="docs">
+      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_DRAFT.docx"><div class="t">Draft Data Center Ordinance</div><div class="d">The full model city law: definitions, permits, water and power limits, enforcement, cleanup bonds.</div><div class="x">Word document</div></a>
+      <a class="doc" href="documents/Project_Jupiter_Evidence_Record.docx"><div class="t">Evidence Record</div><div class="d">The fact brief, water-balance math, timeline, and index of 68 public records behind the numbers.</div><div class="x">Word document</div></a>
+      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_CROSSWALK.docx"><div class="t">Crosswalk</div><div class="d">How the model ordinance maps to the City's own draft framework, section by section.</div><div class="x">Word document</div></a>
+      <a class="doc" href="explainer.html"><div class="t">One-Page Explainer</div><div class="d">A short, printable version of this briefing for handouts and tabling.</div><div class="x">Open page &rarr;</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE LAB -->
+<section id="lab">
+  <div class="wrap">
+    <div class="eyebrow">Who Did This</div>
+    <h2>About Celaya Solutions Research LLC</h2>
+    <div class="lab">
+      <p>We are an independent research lab in El Paso. We build instruments that make hidden systems visible. When our region started debating billions of dollars in data centers, we did what research is for: we gathered the public records, ran the water and power math, showed our work, and published it for free so anyone can check it.</p>
+      <p>The technical work rests on real experience: more than twelve years in electrical infrastructure, including critical power systems at large data centers, and current work building the switchgear and power distribution equipment that data centers run on. We believe technical guidance to a community should disclose who wrote it and what they know, the same way an engineer stamps a drawing.</p>
+      <p style="margin-bottom:0"><strong>Our promise:</strong> every number has a source, every calculation can be reproduced, and corrections are welcome. If a number here is wrong, show us the source and we will fix it. That is how math works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPANISH -->
+<section id="es">
+  <div class="wrap">
+    <div class="eyebrow">En Espa&ntilde;ol</div>
+    <h2>Resumen</h2>
+    <div class="es">
+      <p>Quieren construir centros de datos grandes cerca de El Paso. Usan mucha agua y electricidad. Usamos <strong>105 millones</strong> de galones de agua al d&iacute;a y solo nos sobran <strong>8.7 millones</strong>. Los centros podr&iacute;an usar <strong>1.56 millones</strong>, casi el <strong>18%</strong> de lo que nos sobra. Nuestra red el&eacute;ctrica casi llega a su l&iacute;mite: puede generar 2,300 megavatios y ya lleg&oacute; a 2,173.</p>
+      <p style="margin-bottom:0">Pregunta a tu representante: <em>"&iquest;Cu&aacute;l n&uacute;mero de agua usan para decir que hay suficiente, y d&oacute;nde est&aacute; publicado?"</em> Si no pueden mostrar el n&uacute;mero, no deber&iacute;an aprobar. M&aacute;s informaci&oacute;n: <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</p>
+    </div>
+    <button class="btn" onclick="window.print()">Print or save this page as PDF</button>
+  </div>
+</section>
+
+<!-- SOURCES + FOOTER -->
+<footer>
+  <div class="wrap">
+    <h3 style="color:var(--navy-d)">Sources</h3>
+    <p>Water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; New Mexico Environment Department air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: New Mexico Third Judicial District Court, Case No. D-307-CV-2025-02766. Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
+    <div class="disc">Prepared by <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas. This is an independent community briefing and is <strong>not</strong> an official City of El Paso publication. The legal documents are drafts and are not legal advice; consult counsel before any official action. Content is public domain. Corrections welcome.</div>
+    <p style="color:#8a93a0">&copy; 2026 Celaya Solutions Research LLC &middot; El Paso, Texas &middot; Built to be checked.</p>
+  </div>
+</footer>
+
+</body>
+</html>

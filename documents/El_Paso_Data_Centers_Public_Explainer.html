@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Paso Data Centers: The Water and Power Question</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#16202b; --muted:#5b6675;
+    --navy:#0e4d64; --navy2:#0a3a4d; --gold:#f2a900; --gold-d:#c98a00;
+    --red:#c0392b; --green:#1e8a5a; --line:#e3e7ea; --soft:#f6f8f9;
+    --serif:Georgia,'Times New Roman',serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:17px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 72px}
+  /* header */
+  header{border-bottom:5px solid var(--gold);padding:30px 0 22px;margin-bottom:8px}
+  .brandrow{display:flex;align-items:center;gap:14px}
+  .sun{flex:0 0 auto}
+  h1{font-family:var(--serif);font-size:clamp(26px,4.6vw,38px);line-height:1.12;color:var(--navy2);font-weight:700}
+  .kick{font-family:var(--sans);text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--gold-d);font-weight:700;margin-bottom:6px}
+  .sub{font-size:18px;color:var(--muted);margin-top:10px}
+  .disclaimer{margin-top:16px;font-size:13px;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;border-radius:0 6px 6px 0}
+  h2{font-family:var(--serif);font-size:24px;color:var(--navy2);margin:38px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
+  h3{font-size:18px;color:var(--navy);margin:22px 0 8px}
+  p{margin-bottom:14px}
+  .lead{font-size:19px}
+  /* big number cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+  .card{background:var(--soft);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:16px}
+  .card.gold{border-top-color:var(--gold)}
+  .card.red{border-top-color:var(--red)}
+  .num{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--navy2);line-height:1.05}
+  .card.red .num{color:var(--red)}
+  .card .lbl{font-size:14px;color:var(--muted);margin-top:6px}
+  .src{font-size:12px;color:#8a93a0;margin-top:8px}
+  /* callout */
+  .callout{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px;margin:20px 0}
+  .callout strong{color:var(--navy2)}
+  .q{font-family:var(--serif);font-size:20px;color:var(--navy2);font-style:italic}
+  ul,ol{margin:0 0 14px 22px}
+  li{margin-bottom:7px}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+  th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-size:14px}
+  td{padding:9px 11px;border:1px solid var(--line)}
+  tr:nth-child(even) td{background:var(--soft)}
+  .do{background:#f3f9f5;border:1px solid #cfe8da;border-radius:8px;padding:16px 18px;margin:18px 0}
+  .es{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:24px 0}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:9px 16px;border-radius:6px;font-size:14px;font-weight:600;border:none;cursor:pointer;margin-top:8px}
+  a{color:var(--navy)}
+  @media(max-width:620px){.cards{grid-template-columns:1fr}}
+  @media print{body{font-size:11pt}.btn{display:none}header{border-bottom-color:#999}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brandrow">
+      <svg class="sun" width="46" height="46" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="20" fill="#f2a900"/>
+        <g stroke="#f2a900" stroke-width="5" stroke-linecap="round">
+          <line x1="50" y1="6" x2="50" y2="20"/><line x1="50" y1="80" x2="50" y2="94"/>
+          <line x1="6" y1="50" x2="20" y2="50"/><line x1="80" y1="50" x2="94" y2="50"/>
+          <line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/>
+          <line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/>
+        </g>
+      </svg>
+      <div>
+        <div class="kick">El Paso, the Sun City &middot; Community Explainer</div>
+        <h1>Data Centers, Water, and Power: The Numbers You Should See</h1>
+      </div>
+    </div>
+    <p class="sub">Big computer warehouses are coming to our region. Here is how much water and electricity they would use, how much we have, and the one question to ask before any deal is approved.</p>
+    <div class="disclaimer">Independent community explainer prepared by <strong>Celaya Solutions Research LLC</strong>. This is <strong>not</strong> an official City of El Paso publication. Every number below comes from a public source, listed at the end. Check them yourself.</div>
+  </header>
+
+  <p class="lead">A data center is a giant building full of computers. The computers run hot, so they need water and power to stay cool and switched on. The question is simple: <strong>do we have enough for this, and who pays if we do not?</strong></p>
+
+  <h2>The water, in three numbers</h2>
+  <div class="cards">
+    <div class="card"><div class="num">105M</div><div class="lbl">gallons of water El Paso uses every day right now.</div><div class="src">Texas Tribune, 2025</div></div>
+    <div class="card gold"><div class="num">1.56M</div><div class="lbl">gallons a day the new data centers could need at full size.</div><div class="src">County MOU; KVIA / El Paso Matters</div></div>
+    <div class="card red"><div class="num">8.7M</div><div class="lbl">gallons a day. That is our entire leftover cushion.</div><div class="src">Bureau of Reclamation</div></div>
+  </div>
+  <div class="callout">
+    <p>The data centers would use only about <strong>1.5% of the water we use now</strong>. That sounds tiny. But it is <strong>17.9% of the cushion we have left</strong>. Picture a paycheck: after rent and bills you have $87 left, and someone asks for $16. That is 1.6% of your pay, but 18% of what is left. That is the difference between making it to the end of the month and not.</p>
+  </div>
+
+  <h2>The power, in three numbers</h2>
+  <div class="cards">
+    <div class="card"><div class="num">2,300 MW</div><div class="lbl">how much electricity El Paso Electric can make.</div><div class="src">EPE CEO, 2025</div></div>
+    <div class="card gold"><div class="num">2,173 MW</div><div class="lbl">our highest demand ever, on a 110&deg; day.</div><div class="src">EPE, 2020</div></div>
+    <div class="card red"><div class="num">127 MW</div><div class="lbl">the cushion between the two. Just two data centers want 250.</div><div class="src">Celaya load study</div></div>
+  </div>
+  <p>Two of the new data centers alone (Meta in El Paso and Wiwynn in Socorro) would add about <strong>250 megawatts</strong> of demand. That is roughly <strong>double</strong> the cushion we have. To handle it, the utility has proposed <strong>$3.5 billion</strong> in upgrades and a <strong>$22-a-month</strong> rate increase. The question is who should pay for that.</p>
+
+  <h2>What is actually being built</h2>
+  <table>
+    <tr><th>Project</th><th>Where</th><th>Water (full)</th><th>Power</th></tr>
+    <tr><td>Meta data center</td><td>Northeast El Paso, TX</td><td>up to 1.5M gal/day</td><td>~100 MW from the grid</td></tr>
+    <tr><td>Wiwynn</td><td>Socorro, TX</td><td>&mdash;</td><td>~150 MW from the grid</td></tr>
+    <tr><td>Project Jupiter (Oracle / OpenAI)</td><td>Do&ntilde;a Ana County, NM</td><td>claimed 20k&ndash;60k gal/day</td><td>own gas plant, up to 2,880 MW</td></tr>
+  </table>
+  <p>Three projects, two states, <strong>one shared water basin and air shed</strong>, and no public study of the three of them added together.</p>
+
+  <h2>The big question nobody answered</h2>
+  <div class="callout">
+    <p class="q">"Which water-supply number are you using when you say we have enough water for data centers, and where is it published?"</p>
+    <p>If we count the water we actually pump and treat each day, we are already near the limit. If we count a bigger paper number, there is room. <strong>No official has said which number they used.</strong> If they cannot answer with a source you can check, the decision was based on trust, not math. Trust is not a water source.</p>
+  </div>
+
+  <h2>What a fair rule would do</h2>
+  <p>A draft ordinance (a city law) would set clear terms for any large data center, the same for every company:</p>
+  <ul>
+    <li>Require a <strong>public hearing and Council vote</strong> (a special permit), not a quiet approval.</li>
+    <li>Keep them <strong>1,000 feet</strong> from homes, schools, parks, hospitals, and churches.</li>
+    <li><strong>Cap their water</strong>, require recycled water for cooling, and <strong>measure and publish</strong> use every quarter.</li>
+    <li>Make them <strong>pay 100% of the power and water upgrades they cause</strong>, so your bill does not rise to cover them.</li>
+    <li>Require a <strong>cleanup bond</strong> before they open, so an empty building never becomes the public's problem.</li>
+    <li><strong>Fine them daily</strong> and pull the permit if they break the rules.</li>
+  </ul>
+
+  <h2>What you can do</h2>
+  <div class="do">
+    <ul>
+      <li><strong>Speak up now.</strong> The City released a draft data-center policy for public comment. Learn more and comment at <strong>elpasotexas.gov/data-centers</strong>.</li>
+      <li><strong>Ask the one question</strong> (above) of your City Council member and county commissioner. Make them show the number.</li>
+      <li><strong>Attend a meeting</strong> and give a three-minute comment. Agendas at <strong>elpasotexas.legistar.com</strong>.</li>
+      <li><strong>Share this page</strong> with neighbors, your church, and small-business owners.</li>
+    </ul>
+  </div>
+
+  <div class="es">
+    <h3>En español (resumen)</h3>
+    <p>Quieren construir centros de datos grandes cerca de El Paso. Usan mucha agua y electricidad. Usamos <strong>105 millones</strong> de galones de agua al d&iacute;a y solo nos sobran <strong>8.7 millones</strong>. Los centros podr&iacute;an usar <strong>1.56 millones</strong>, casi el <strong>18%</strong> de lo que nos sobra. Nuestra red el&eacute;ctrica casi llega a su l&iacute;mite. Pregunta a tu representante: <em>"&iquest;Cu&aacute;l n&uacute;mero de agua usan para decir que hay suficiente, y d&oacute;nde est&aacute; publicado?"</em> Si no pueden mostrar el n&uacute;mero, no deber&iacute;an aprobar.</p>
+  </div>
+
+  <button class="btn" onclick="window.print()">Print or save as PDF</button>
+
+  <h2>Sources</h2>
+  <p style="font-size:14px;color:var(--muted)">El Paso water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; NMED air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: Third Judicial District Court, Case No. D-307-CV-2025-02766. Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
+
+  <footer>
+    Prepared by <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas &middot; June 2026 &middot; Independent, sourced, public-domain research. Not an official City of El Paso document. Corrections welcome.
+  </footer>
+</div>
+</body>
+</html>

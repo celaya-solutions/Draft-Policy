@@ -1,0 +1,13 @@
+{
+  "name": "El Paso Data Centers — Community Briefing",
+  "short_name": "EP Data Centers",
+  "description": "An independent, sourced, plain-language briefing on data centers, water, and power in El Paso. By Celaya Solutions Research LLC.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0e4d64",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
