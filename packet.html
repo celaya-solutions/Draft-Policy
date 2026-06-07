@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Public Comment Packet — El Paso Data Center Policy</title>
+<style>
+  @page { size: Letter; margin: 0.85in 0.8in; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--ink:#15212c;--muted:#5a6675;--navy:#0e4d64;--navy-d:#0a3a4d;--gold:#f2a900;--gold-d:#9c6708;--red:#c0392b;--line:#d8dee2;--soft:#f3f6f7;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.5;font-size:11.5pt}
+  .pb{break-before:page}
+  h1,h2,h3{font-family:var(--serif);color:var(--navy-d);line-height:1.2}
+  p{margin-bottom:9px}
+  ul,ol{margin:0 0 10px 20px}li{margin-bottom:5px}
+  a{color:var(--navy);text-decoration:none}
+  /* cover */
+  .cover{height:9in;display:flex;flex-direction:column;justify-content:center}
+  .cover .mark{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+  .cover .mark .nm{font-weight:700;color:var(--navy-d);font-size:15pt}
+  .cover h1{font-size:30pt;margin:6px 0 10px}
+  .cover .sub{font-size:14pt;color:var(--muted);font-family:var(--sans);margin-bottom:30px}
+  .cover .box{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;font-size:11pt;color:#37434f}
+  .cover .toc{margin-top:24px;font-size:11pt}
+  .cover .toc b{color:var(--navy-d)}
+  .tag{text-transform:uppercase;letter-spacing:2px;font-size:9pt;font-weight:700;color:var(--gold-d);font-family:var(--sans)}
+  .sec-h{font-size:16pt;border-bottom:2px solid var(--gold);padding-bottom:6px;margin-bottom:14px}
+  /* letter */
+  .meta{font-size:10pt;color:#37434f;margin-bottom:3px}.meta b{color:var(--ink)}
+  .re{font-family:var(--serif);font-size:13pt;color:var(--navy-d);margin:12px 0 14px}
+  .q{font-family:var(--serif);font-style:italic;font-size:12pt;color:var(--navy-d);border-left:4px solid var(--gold);padding:3px 0 3px 12px;margin:9px 0}
+  .ask{counter-reset:a;list-style:none;margin-left:0}.ask li{counter-increment:a;position:relative;padding-left:30px;margin-bottom:7px}
+  .ask li::before{content:counter(a);position:absolute;left:0;top:0;width:21px;height:21px;background:var(--navy);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:10pt;font-weight:700;font-family:var(--sans)}
+  .sig .nm{font-weight:700;color:var(--navy-d)}.small{font-size:9.5pt;color:var(--muted)}
+  /* exhibit */
+  .band{background:var(--navy-d);color:#fff;border-radius:8px;padding:12px 16px;margin:10px 0 16px;font-family:var(--serif);font-size:13pt}
+  .band b{color:var(--gold)}
+  .score{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-bottom:16px}
+  .col{border-radius:8px;padding:13px 16px}
+  .col.gave{background:#fcebe9;border:1px solid #e7b7b0}.col.got{background:var(--soft);border:1px solid var(--line)}
+  .col h3{font-size:12.5pt;margin-bottom:7px}.col.gave h3{color:#a3271a}
+  .col li{font-size:10pt;margin-bottom:6px}.amt{font-weight:700;color:#a3271a}
+  .surr{border:1px solid var(--line);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:13px 16px;margin-bottom:14px}
+  .surr h3{font-size:12.5pt;margin-bottom:7px}.surr li{font-size:10pt;margin-bottom:6px}
+  /* ordinance (injected) */
+  .ord p{font-size:10pt;margin-bottom:7px}
+  .ord table{width:100%;border-collapse:collapse;margin:10px 0;font-size:9pt}
+  .ord td,.ord th{border:1px solid var(--line);padding:5px 7px;text-align:left;vertical-align:top}
+  .ord tr:first-child td,.ord th{background:var(--navy);color:#fff;font-weight:700}
+  .note{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:10px 13px;font-size:9.5pt;color:#37434f;margin:10px 0}
+  .foot{margin-top:20px;border-top:1px solid var(--line);padding-top:8px;font-size:8.5pt;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<section class="cover">
+  <div class="mark">
+    <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="19" fill="#f2a900"/><g stroke="#f2a900" stroke-width="6" stroke-linecap="round"><line x1="50" y1="7" x2="50" y2="21"/><line x1="50" y1="79" x2="50" y2="93"/><line x1="7" y1="50" x2="21" y2="50"/><line x1="79" y1="50" x2="93" y2="50"/><line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/><line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/></g></svg>
+    <div class="nm">Celaya Solutions Research LLC</div>
+  </div>
+  <div class="tag">Public Comment Packet &middot; El Paso, Texas</div>
+  <h1>Data Centers, Water &amp; Power</h1>
+  <div class="sub">Adopt an enforceable Data Center Ordinance &mdash; not a policy paper.</div>
+  <div class="box">Submitted to the El Paso City Council and City Plan Commission on the draft Data Center Policy Framework. Independent, sourced, and reproducible. Not an official City of El Paso publication.</div>
+  <div class="toc">
+    <p style="margin-top:24px"><b>Contents</b></p>
+    <p>Part A &mdash; Public comment letter<br>Part B &mdash; Exhibit: what El Paso gave up for one data center<br>Part C &mdash; Model Data Center Ordinance (filled, ready for City Attorney review)</p>
+    <p class="small" style="margin-top:20px">Prepared by Christopher Celaya, Celaya Solutions Research LLC &middot; June 9, 2026 &middot; celaya-solutions.github.io/Draft-Policy</p>
+  </div>
+</section>
+
+<!-- ===== PART A: LETTER ===== -->
+<section class="pb">
+  <div class="tag">Part A</div>
+  <h2 class="sec-h">Public comment letter</h2>
+  <div class="meta"><b>Date:</b> June 9, 2026</div>
+  <div class="meta"><b>To:</b> Hon. Renard Johnson, Mayor, and Members of the El Paso City Council</div>
+  <div class="meta"><b>cc:</b> City Plan Commission; Laura D. Prine, City Clerk (for the record); Karla Nieman, City Attorney</div>
+  <div class="re"><b>Re:</b> Public comment on the draft Data Center Policy Framework &mdash; please adopt an <u>enforceable ordinance</u>, not a policy paper</div>
+
+  <p>Mayor Johnson and Council Members,</p>
+  <p>My name is Christopher Celaya. I am an El Paso resident and the founder of Celaya Solutions Research LLC. My background is in electrical infrastructure &mdash; more than twelve years, including critical power systems at large data centers and switchgear manufacturing. I have read the public records behind the region's data-center projects and run the water and power math, and I am submitting that work, sourced and reproducible, for your consideration.</p>
+  <p>I am not against data centers or technology. I build the equipment they run on. My concern is narrow and factual: the City is approving facilities that consume large volumes of our water and power without enforceable limits, and is shifting the cost and risk onto residents. The draft Data Center Policy Framework is a good list of goals, but it has no teeth. It should be replaced with an enforceable ordinance.</p>
+
+  <h3>The one question I ask you to answer on the record</h3>
+  <div class="q">"Which water-supply number did the City rely on to find that we have enough water for data centers, and where is it published?"</div>
+  <p>El Paso Water provides on the order of 105 million gallons per day, with a documented regional surplus on the order of 8.71 million gallons per day. The Northeast El Paso facility alone is authorized for up to 1.5 million gallons per day &mdash; roughly 17.9% of that surplus &mdash; and no public document identifies the supply figure relied upon. If that number cannot be shown with a citable source, the approvals rest on trust, not data.</p>
+
+  <h3>What the public record now shows</h3>
+  <p>The executed agreements for the Northeast El Paso project (counterparty WURLDWIDE LLC, d/b/a Statue LLC) show the public commitment is far larger than the headline "80% tax break," while the protections a host city normally requires are absent:</p>
+  <ul>
+    <li>An 80% property-tax <b>abatement</b> for 10 years per phase (Chapter 312), <b>plus</b> a separate 80% property-tax <b>grant</b> for 15 years per phase with <b>no dollar cap</b> (Chapter 380), across a 35-year term and up to five phases;</li>
+    <li>Up to <b>$5,000,000</b> in Texas Economic Development funds and up to <b>$7.5&ndash;9 million</b> reimbursing the company's road costs, a waiver of nearly all impact, permit, and park fees, and the sale of roughly 1,039 acres of City land to the company;</li>
+    <li>In return, a requirement of only <b>50 permanent jobs</b> &mdash; total, not per phase, remote workers counting, at a wage floor near $16.43/hour;</li>
+    <li>And, critically, <b>no cap on water or electricity use anywhere in these contracts.</b> Water terms were placed in a separate El Paso Water agreement that is not part of the public deal, and there is no cost-causation requirement to keep the utility upgrades the project triggers off residents' bills.</li>
+  </ul>
+  <p>I do not raise these to single out one company; each project followed the rules that exist today. The point is that the rules are too weak, and the same pattern will repeat unless the City sets enforceable, generally applicable terms now.</p>
+
+  <h3>What I am asking the Council to do</h3>
+  <ol class="ask">
+    <li><b>Adopt an enforceable ordinance</b>, generally applicable to all hyperscale data centers, in place of the non-binding framework. The model ordinance in Part C is written to be neutral and court-ready: a special permit and Council vote, a 1,000-foot buffer from homes and schools, a potable-water cap with reclaimed-water cooling, public metering and reporting, 100% applicant-paid cost causation, daily penalties, and a teardown bond.</li>
+    <li><b>Publish the water-supply number</b> relied upon for data-center approvals, with its source. If the math cannot be shown, do not approve further capacity.</li>
+    <li><b>Require a cumulative regional water-and-power study</b> &mdash; counting Meta, Wiwynn, and the adjacent Do&ntilde;a Ana County project together &mdash; before any new approval, phase, or incentive.</li>
+    <li><b>Make data centers pay 100% of the utility upgrades they cause</b>, with no rate increases on residents, and require that the water/wastewater and interconnection service agreements be filed with the City and made public, redacted only as the Texas Public Information Act requires.</li>
+    <li><b>Require a decommissioning bond</b> before operation, so an empty facility never becomes the public's liability.</li>
+  </ol>
+  <p>I am available to brief Council, the City Plan Commission, or City staff at no cost. Thank you for your service and for considering this comment.</p>
+  <div class="sig">
+    <div class="small">Respectfully submitted,</div>
+    <div class="nm" style="margin-top:14px">Christopher Celaya</div>
+    <div class="small">Founder, Celaya Solutions Research LLC &middot; El Paso, Texas &middot; mr.christophercelaya@gmail.com</div>
+  </div>
+</section>
+
+<!-- ===== PART B: EXHIBIT ===== -->
+<section class="pb">
+  <div class="tag">Part B &middot; From the signed agreements</div>
+  <h2 class="sec-h">What El Paso gave up for one data center</h2>
+  <p class="small" style="margin-bottom:6px">Every line is from the executed agreements for the Northeast El Paso project (Chapter 312, Chapter 380, and the Stan Roberts records), with WURLDWIDE LLC, d/b/a Statue LLC.</p>
+  <div class="band">Two 80% tax breaks &nbsp;<b>+</b>&nbsp; $14 million+ in cash &amp; land &nbsp;<b>+</b>&nbsp; a 35-year lock-in &nbsp;<b>+</b>&nbsp; <b>zero</b> water or power limits &nbsp;&mdash;&nbsp; for <b>50 jobs</b>.</div>
+  <div class="score">
+    <div class="col gave">
+      <h3>What the City gave</h3>
+      <ul>
+        <li><span class="amt">80%</span> property-tax <b>abatement</b> &mdash; 10 yrs/phase, up to 5 phases (Ch. 312)</li>
+        <li><span class="amt">A second 80%</span> property-tax <b>grant</b> &mdash; 15 yrs/phase, <b>no dollar cap</b> (Ch. 380)</li>
+        <li><span class="amt">$5,000,000</span> cash in TED road funds</li>
+        <li><span class="amt">up to $9,000,000</span> reimbursing the company's roads</li>
+        <li><b>All</b> impact, permit, review &amp; park fees <b>waived</b></li>
+        <li><span class="amt">~1,039 acres</span> of City land &mdash; <b>sold</b> to the company</li>
+        <li>A <b>35-year</b> lock-in that auto-extends</li>
+      </ul>
+    </div>
+    <div class="col got">
+      <h3>What the City got</h3>
+      <ul>
+        <li><b>50 permanent jobs</b> &mdash; total, not per phase</li>
+        <li>Remote workers count; floor <b>~$16.43/hr</b></li>
+        <li>Jobs not required for <b>~a decade</b></li>
+        <li>A building the company is <b>not required to construct</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="surr">
+    <h3>And the oversight the City surrendered</h3>
+    <ul>
+      <li><b>No cap on water. No cap on power.</b> Water terms sit in a separate EPWater agreement that is <b>not public</b>.</li>
+      <li><b>No cost-causation</b> &mdash; nothing requires the company to pay for the utility upgrades it forces, so residents' bills absorb them.</li>
+      <li><b>No noise, air, or environmental limits</b>, and no community-benefit requirement.</li>
+      <li>A promise <b>not to tax or regulate data centers for 35 years</b>.</li>
+      <li>A duty to <b>fight residents' public-records requests</b> for the company, at the Texas Attorney General.</li>
+      <li>Inspection <b>once a year</b>, escorted, under a non-disclosure agreement, and <b>almost no clawback</b> if it underdelivers.</li>
+    </ul>
+  </div>
+  <p><b>El Paso cannot easily undo this deal. It can refuse to repeat it.</b> Wiwynn (Socorro) and Project Jupiter (Do&ntilde;a Ana County) draw on the same basin and air, with no public study of the three together. The fix is a city law that sets clear, equal terms before the next signature &mdash; the ordinance that follows.</p>
+</section>
+
+<!-- ===== PART C: ORDINANCE ===== -->
+<section class="pb">
+  <div class="tag">Part C</div>
+  <h2 class="sec-h">Model Data Center Ordinance</h2>
+  <div class="note">This is a draft prepared by Celaya Solutions Research LLC for introduction before the City Plan Commission and City Council and for City Attorney review. The 16 local-policy values have been filled with the drafter's recommendations; the Council may set any of them within the stated legal limits.</div>
+  <div class="ord">
+<p><strong>CITY OF EL PASO</strong></p>
+<p><strong>DATA CENTER ORDINANCE (DRAFT)</strong></p>
+<p><em>An Ordinance amending Title 20 (Zoning) of the El Paso City Code
+to establish definitions, zoning controls, performance standards,
+monitoring and reporting requirements, enforcement and penalties, and
+decommissioning and financial assurance requirements for hyperscale data
+centers; providing for severability; and establishing an effective
+date.</em></p>
+<p>Drafted by Christopher Celaya, Celaya Solutions Research LLC. June
+2026. <em>Prepared for introduction before the City Plan Commission and
+City Council and for City Attorney review.</em></p>
+<p><em>Technical provisions prepared with reference to the drafter's
+domain experience in electrical infrastructure (more than twelve years,
+including data center critical power systems and switchgear
+manufacturing).</em></p>
+<p><strong>FINDINGS</strong></p>
+<p>WHEREAS, the City of El Paso is a Texas home-rule municipality
+authorized to enact zoning regulations to protect the public health,
+safety, and general welfare under Chapter 211 of the Texas Local
+Government Code; and</p>
+<p>WHEREAS, on February 17, 2026, the City Council directed staff to
+develop a data center policy framework addressing impacts on water,
+energy, infrastructure, and the community; and</p>
+<p>WHEREAS, the City lies in the Chihuahuan Desert and draws
+approximately 40 percent of its water from the Hueco Bolson and
+approximately 17 percent from the Mesilla Bolson, and withdraws
+groundwater from the Hueco Bolson at a rate of 60,000 to 70,000
+acre-feet per year against natural recharge of approximately 5,000
+acre-feet per year; and</p>
+<p>WHEREAS, hyperscale data centers consume large volumes of water for
+cooling and impose substantial and concentrated electrical demand, and
+the unregulated siting of such facilities threatens the City's finite
+water resources and the reliability and affordability of its utility
+systems; and</p>
+<p>WHEREAS, the City is served by El Paso Electric within the Western
+Interconnection and is not located within the Electric Reliability
+Council of Texas, and therefore the large-load interconnection
+protections established by Senate Bill 6 of the 89th Texas Legislature
+(2025) and Public Utility Commission of Texas rule at Title 16 Texas
+Administrative Code Section 25.194 do not by their terms govern
+facilities sited in El Paso, leaving a regulatory gap that this
+Ordinance addresses through the City's zoning authority; and</p>
+<p>WHEREAS, El Paso Water provides on the order of 105 million gallons
+per day, and the documented regional supply surplus is on the order of
+8.71 million gallons per day, such that combined data-center potable
+demand of up to approximately 1.56 million gallons per day would consume
+approximately 17.9 percent of that surplus, and no public document
+identifies which water-supply figure was relied upon to find regional
+supply adequate for data-center approvals; and</p>
+<p>WHEREAS, multiple hyperscale data centers are being developed in the
+region at the same time and without coordination, including a facility
+in Northeast El Paso authorized to use up to 1,500,000 gallons of
+potable water per day at full build-out, a facility in Socorro, and a
+project in adjacent Dona Ana County, New Mexico, the record of which
+(Third Judicial District Court Case No. D-307-CV-2025-02766) documents
+water-service commitments unsupported by technical data, no analysis of
+cumulative regional water demand, and a self-supplied natural-gas
+microgrid authorized for up to 2,880 megawatts and emitting hundreds of
+tons of nitrogen oxides and millions of tons of greenhouse gases per
+year; and</p>
+<p>WHEREAS, El Paso Electric reports a record peak demand of 2,173
+megawatts against generation capacity of approximately 2,300 megawatts,
+projects large-load-driven capacity needs of up to 1,650 megawatts, and
+has proposed billions of dollars in system upgrades and residential rate
+increases, such that the cost of serving hyperscale data centers risks
+being shifted to other ratepayers absent cost-causation requirements;
+and</p>
+<p>WHEREAS, no existing mechanism requires hyperscale data centers
+drawing on the shared regional water basin and airshed to disclose or
+mitigate their cumulative impact, or to bear the cost of the utility
+system upgrades they cause; and</p>
+<p>WHEREAS, this Ordinance applies generally to all hyperscale data
+centers that meet the thresholds in Article 2, is not directed at any
+single applicant or project, and rests on the factual findings stated in
+this section and in the record before the City Council, a summary of
+which appears in the Evidence Appendix to this Ordinance; and</p>
+<p>WHEREAS, the City Council finds that the standards in this Ordinance
+are reasonable, rest on recognized federal, state, and industry
+standards, and are necessary to protect the public health, safety, and
+general welfare;</p>
+<p><strong>NOW, THEREFORE, BE IT ORDAINED BY THE CITY COUNCIL OF THE
+CITY OF EL PASO, TEXAS:</strong></p>
+<p><strong>ARTICLE 1. PURPOSE AND INTENT</strong></p>
+<p><strong>Sec. 1.01 Purpose.</strong> This Ordinance establishes
+uniform, generally applicable requirements for the siting, construction,
+operation, monitoring, and decommissioning of hyperscale data centers
+within the City of El Paso. Its purpose is to protect the City's limited
+water supply, to safeguard the reliability and affordability of the
+City's electric and water utilities, to protect residents from noise,
+air emissions, and fire and spill hazards, and to ensure that the costs
+and risks of these facilities are borne by their operators rather than
+by the public.</p>
+<p><strong>Sec. 1.02 Intent.</strong> The City intends that every
+requirement in this Ordinance be applied as an enforceable condition of
+development and operation, that compliance be verified through metering,
+reporting, and independent audit, and that violations carry defined
+monetary penalties and the loss of the special permit. The City does not
+prohibit data centers; it requires that any hyperscale data center
+operating in El Paso do so on terms that protect the community and its
+resources.</p>
+<p><strong>Sec. 1.03 Relationship to other law.</strong> This Ordinance
+supplements applicable federal law, state law, and the El Paso City
+Code. Where this Ordinance imposes a requirement more stringent than
+another applicable provision, the more stringent requirement shall
+govern to the extent permitted by law.</p>
+<p><strong>ARTICLE 2. DEFINITIONS</strong></p>
+<p><strong>Sec. 2.01 Application.</strong> The following definitions
+shall apply throughout this Ordinance. A term not defined here shall
+have the meaning given in Title 20 of the El Paso City Code or, if not
+defined there, its ordinary technical meaning.</p>
+<p><strong>Sec. 2.02 Hyperscale data center.</strong> "Hyperscale data
+center" means a data processing center that meets or exceeds either of
+the following nameplate thresholds:</p>
+<p>(a) an information technology (IT) electrical load of 40 megawatts
+(MW) or greater; or</p>
+<p>(b) a total electrical service capacity of 100 MW or greater.</p>
+<p>A facility shall be classified as a hyperscale data center upon
+exceeding either threshold, whichever is exceeded first. Power usage
+effectiveness (PUE) and water usage effectiveness (WUE) shall not be
+used to determine whether a facility is a hyperscale data center and
+shall be reported only as operating metrics under Article 5.</p>
+<p><strong>Sec. 2.03 Data center, non-hyperscale.</strong> "Data center,
+non-hyperscale" means a data processing center that does not meet either
+threshold in Section 2.02. Such a facility shall remain subject to the
+otherwise applicable provisions of Title 20.</p>
+<p><strong>Sec. 2.04 Other terms.</strong> The following terms shall
+have the stated meanings:</p>
+<p>(a) "Applicant" means a person seeking a special permit for, or
+operating, a hyperscale data center under this Ordinance.</p>
+<p>(b) "Point of common coupling (PCC)" has the meaning given in IEEE
+519-2022.</p>
+<p>(c) "Total demand distortion (TDD)" has the meaning given in IEEE
+519-2022.</p>
+<p>(d) "Displacement power factor" means the ratio of the active power
+of the fundamental frequency to the apparent power of the fundamental
+frequency.</p>
+<p>(e) "Power usage effectiveness (PUE)" means total annual facility
+energy divided by total annual IT equipment energy.</p>
+<p>(f) "Water usage effectiveness (WUE)" means total annual facility
+water use, in liters, divided by total annual IT equipment energy, in
+kilowatt-hours.</p>
+<p>(g) "Environmentally sensitive area" means a mapped floodplain, an
+arroyo or stormwater conveyance, designated open space, land within the
+City's hillside, ridgeline, scenic, or open-space overlay districts, and
+habitat of a state-listed or federally listed species.</p>
+<p>(h) "Serving utility" means El Paso Electric and El Paso Water, or
+their successor providers.</p>
+<p>(i) "Firm load shed" means a utility-directed involuntary reduction
+of load during a declared grid emergency.</p>
+<p>(j) "Director" means the Director of Planning and Inspections or a
+designee.</p>
+<p><strong>ARTICLE 3. APPLICABILITY AND ZONING</strong></p>
+<p><strong>Sec. 3.01 Applicability.</strong></p>
+<p>(a) This Ordinance shall apply to every application for a hyperscale
+data center filed on or after the effective date in Section 8.03. An
+application that does not conform to this Ordinance shall not be
+approved.</p>
+<p>(b) Consistent with Chapter 245 of the Texas Local Government Code,
+an application for which rights vested before the effective date shall
+be reviewed under the ordinances in effect when the original application
+giving fair notice of the project was filed, except that any requirement
+of this Ordinance protecting public health and safety, including fire,
+explosion, and spill hazards, shall apply to the extent authorized by
+Section 245.004 of the Texas Local Government Code.</p>
+<p><strong>Sec. 3.02 Special permit required.</strong></p>
+<p>(a) A hyperscale data center shall be allowed only by special permit
+in the C-4 (Commercial), M-1 (Manufacturing), and M-2 (Manufacturing)
+zoning districts, and shall not be allowed by right in any district.</p>
+<p>(b) A hyperscale data center shall be prohibited in every other
+district, and an application proposing such a use in any other district
+shall be denied.</p>
+<p>(c) A hyperscale data center established, constructed, or expanded
+without an approved special permit shall be subject to enforcement under
+Article 6, including a penalty of $2,000 per day under Section 6.02.</p>
+<p><strong>Sec. 3.03 Special permit process.</strong></p>
+<p>(a) The City Plan Commission shall hold a public hearing on each
+application and forward a recommendation, and the City Council shall
+approve, approve with conditions, or deny the special permit.</p>
+<p>(b) Notice shall be given as required by Chapter 211 of the Texas
+Local Government Code and Title 20 of the City Code, including written
+notice to owners of property within 1,000 feet of the site.</p>
+<p>(c) The City Council shall deny an application that fails to
+demonstrate compliance with Articles 3 through 7.</p>
+<p>(d) Each requirement of this Ordinance and each condition imposed
+shall be a continuing condition of the special permit, and violation of
+any condition shall be grounds for revocation under Section 6.04.</p>
+<p><strong>Sec. 3.04 Setback.</strong></p>
+<p>(a) A hyperscale data center shall maintain a minimum setback of
+1,000 feet from the property line of any residential zoning district,
+school, park, hospital, place of worship, or environmentally sensitive
+area.</p>
+<p>(b) The setback shall be measured from the property line of the
+protected use or area to the nearest building, generator, cooling tower,
+fuel storage, electrical substation, or other operational equipment of
+the facility.</p>
+<p>(c) An application that does not satisfy the setback shall be denied,
+and operation of any equipment within the setback shall be subject to a
+penalty under Section 6.02 and to revocation under Section 6.04.</p>
+<p><strong>Sec. 3.05 Application contents.</strong> An application shall
+include the nameplate IT load and total electrical service; the
+projected water demand and source; the cooling technology; the count,
+size, fuel type, and storage volume of all generators; a power quality
+study under Section 4.02; an electrical load study and grid-capacity
+impact analysis prepared by an independent licensed professional
+engineer; a water supply and impact assessment addressing cumulative
+demand on the regional water basin; an interconnection cost-causation
+plan under Section 4.05; and a decommissioning plan and cost estimate
+under Section 7.01. An incomplete application shall not be accepted.</p>
+<p><strong>ARTICLE 4. PERFORMANCE STANDARDS</strong></p>
+<p><strong>Sec. 4.01 Water.</strong></p>
+<p>(a) A hyperscale data center shall not withdraw more than 250
+acre-feet of potable water per year, and shall supply not less than 90
+percent of its total cooling water demand from reclaimed or other
+non-potable sources.</p>
+<p>(b) The facility shall meter potable and non-potable water separately
+under Article 5.</p>
+<p>(c) Exceedance of the potable water limit shall be a violation
+subject to a penalty under Section 6.02, and continued exceedance for
+more than 30 days shall be grounds for revocation under Section
+6.04.</p>
+<p><strong>Sec. 4.02 Electric power quality.</strong></p>
+<p>(a) A hyperscale data center shall comply with IEEE 519-2022 at the
+point of common coupling.</p>
+<p>(b) Total demand distortion shall not exceed 5.0 percent at the point
+of common coupling under all operating conditions, which is the most
+stringent current distortion limit in IEEE 519-2022, Table 2.</p>
+<p>(c) Displacement power factor shall be maintained at 0.95 or greater
+across all operating conditions.</p>
+<p>(d) An independent licensed professional engineer shall verify
+compliance at commissioning and at each capacity expansion, and shall
+file the verification under Article 5.</p>
+<p>(e) Failure to meet any limit in this Section shall be a violation
+subject to a penalty under Section 6.02, and the facility shall correct
+the exceedance within 30 days or be subject to revocation under Section
+6.04.</p>
+<p><strong>Sec. 4.03 Backup generation, air emissions, and fuel
+storage.</strong></p>
+<p>(a) Before operation, the applicant shall obtain all required air
+authorizations from the Texas Commission on Environmental Quality
+(TCEQ). Because Title 30 Texas Administrative Code Section 106.512 does
+not authorize electric generating units, backup generators shall be
+authorized under a TCEQ Air Quality Standard Permit or a permit under
+Title 30 Texas Administrative Code Chapter 116, as applicable.</p>
+<p>(b) Each stationary compression-ignition engine shall comply with the
+federal New Source Performance Standards for stationary
+compression-ignition internal combustion engines at Title 40 Code of
+Federal Regulations Part 60, Subpart IIII.</p>
+<p>(c) Non-emergency operation of each engine shall not exceed 50 hours
+per engine per year, consistent with the limits for emergency engines
+under Title 40 Code of Federal Regulations Part 60, Subpart IIII.</p>
+<p>(d) Diesel and other fuel storage shall comply with the Spill
+Prevention, Control, and Countermeasure requirements of Title 40 Code of
+Federal Regulations Part 112. Secondary containment shall hold not less
+than 110 percent of the largest single container plus the volume of a
+25-year, 24-hour rainfall event.</p>
+<p>(e) Fuel storage shall comply with the separation distance and
+spacing requirements of NFPA 30, Flammable and Combustible Liquids
+Code.</p>
+<p>(f) A facility with aggregate fuel storage exceeding 1,000,000
+gallons shall prepare and maintain a Facility Response Plan under Title
+40 Code of Federal Regulations Section 112.20.</p>
+<p>(g) Fuel storage systems shall be inspected at least once per year,
+and the inspection report shall be filed with the El Paso Fire
+Department and the City Office of Emergency Management under Article
+5.</p>
+<p>(h) Operation without a required TCEQ authorization, or any other
+violation of this Section, shall be a violation subject to a penalty
+under Section 6.02 and grounds for revocation under Section 6.04.</p>
+<p><strong>Sec. 4.04 Noise.</strong></p>
+<p>(a) A hyperscale data center shall not produce sound exceeding 55 dBA
+between 7:00 a.m. and 10:00 p.m., or 50 dBA between 10:00 p.m. and 7:00
+a.m., measured at the property line of any residential district or
+protected use.</p>
+<p>(b) Sound shall be measured in accordance with ANSI S1.4 and ANSI
+S12.9.</p>
+<p>(c) Exceedance shall be a violation subject to a penalty under
+Section 6.02.</p>
+<p><strong>Sec. 4.05 Interconnection cost causation.</strong></p>
+<p>(a) The applicant shall bear 100 percent of the cost of every
+electric and water utility system upgrade attributable to the facility,
+including generation, transmission, distribution, substation, water, and
+wastewater upgrades.</p>
+<p>(b) The applicant shall enter into a cost-causation-based service or
+interconnection agreement with each serving utility consistent with that
+utility's applicable tariffs, the Public Utility Regulatory Act (Texas
+Utilities Code), Public Utility Commission of Texas rules at Title 16
+Texas Administrative Code, and all other governing state and federal
+regulatory requirements.</p>
+<p>(c) No cost attributable to the facility shall be allocated to other
+ratepayers.</p>
+<p>(d) The applicant shall file the executed agreement and a
+certification of compliance under Article 5 before a certificate of
+occupancy is issued. Failure to comply shall preclude issuance of a
+certificate of occupancy and shall be grounds for revocation under
+Section 6.04.</p>
+<p><strong>Sec. 4.06 Grid emergency curtailment.</strong></p>
+<p>(a) Before operation, the facility shall install and maintain
+equipment enabling the serving electric utility to curtail the
+facility's load during a declared grid emergency or firm load shed
+event.</p>
+<p>(b) Failure to install or maintain the equipment, or failure to
+curtail when directed, shall be a violation subject to a penalty under
+Section 6.02 and grounds for revocation under Section 6.04.</p>
+<p><strong>Sec. 4.07 Community benefits agreement
+conditions.</strong></p>
+<p>(a) Any community benefits agreement, and any agreement under Chapter
+380 of the Texas Local Government Code between the City and the
+applicant, shall be incorporated by reference as binding conditions of
+the special permit.</p>
+<p>(b) Breach of any incorporated term shall be a violation subject to a
+penalty under Section 6.02 and grounds for revocation under Section
+6.04.</p>
+<p><strong>ARTICLE 5. MONITORING, METERING, AND REPORTING</strong></p>
+<p><strong>Sec. 5.01 Metering.</strong></p>
+<p>(a) The facility shall install real-time interval metering of all
+electricity consumption and all water consumption, with separate
+metering of potable and non-potable water.</p>
+<p>(b) Metering data shall be retained for not less than 7 years and
+made available to the City on request.</p>
+<p>(c) Failure to install or maintain metering shall be a violation
+subject to a penalty under Section 6.02.</p>
+<p><strong>Sec. 5.02 Quarterly reports.</strong></p>
+<p>(a) Not later than 30 days after the end of each calendar quarter,
+the facility shall file with the Director a report stating metered
+electricity consumption, metered potable and non-potable water use, and
+generator operating hours.</p>
+<p>(b) A late or incomplete report shall be a violation subject to a
+penalty under Section 6.02, assessed for each day under Section
+6.01.</p>
+<p><strong>Sec. 5.03 Annual metrics and audit.</strong></p>
+<p>(a) The facility shall report annually its power usage effectiveness
+(PUE) and water usage effectiveness (WUE), each calculated for the
+preceding 12 months.</p>
+<p>(b) The facility shall obtain an annual third-party performance
+audit, conducted at the facility's expense by an independent licensed
+professional engineer, verifying compliance with Article 4, and shall
+file the audit with the Director.</p>
+<p>(c) Failure to file the annual metrics or the audit shall be a
+violation subject to a penalty under Section 6.02 and grounds for
+revocation under Section 6.04.</p>
+<p><strong>Sec. 5.04 Power quality and safety filings.</strong></p>
+<p>(a) The facility shall file the IEEE 519-2022 verification required
+by Section 4.02 at commissioning and at each capacity expansion.</p>
+<p>(b) The facility shall file the annual fuel storage inspection
+required by Section 4.03 with the El Paso Fire Department and the City
+Office of Emergency Management.</p>
+<p>(c) Failure to file shall be a violation subject to a penalty under
+Section 6.02.</p>
+<p><strong>Sec. 5.05 Public availability.</strong> The Director shall
+make the quarterly reports, annual metrics, and audits available to the
+public, with redaction only as required by the Texas Public Information
+Act, Chapter 552 of the Texas Government Code.</p>
+<p><strong>ARTICLE 6. ENFORCEMENT AND PENALTIES</strong></p>
+<p><strong>Sec. 6.01 Violations.</strong> Each failure to comply with a
+requirement of this Ordinance or a condition of a special permit issued
+under it shall be a violation. Each day a violation continues shall be a
+separate offense.</p>
+<p><strong>Sec. 6.02 Penalty schedule.</strong> The following penalties
+shall be assessed for each violation, for each day, and shall escalate
+as stated. No penalty under this Section shall exceed $2,000 per day per
+violation, which is the maximum authorized for an ordinance governing
+zoning and public health and safety under Section 54.001(b) of the Texas
+Local Government Code.</p>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Violation category</strong></td>
+<td><strong>Days 1 to 15</strong></td>
+<td><strong>Days 16 to 45</strong></td>
+<td><strong>Day 46 and after</strong></td>
+</tr>
+<tr>
+<td>Reporting, metering, and audit violations (Article 5)</td>
+<td>$500 / day</td>
+<td>$1,000 / day</td>
+<td>$2,000 / day</td>
+</tr>
+<tr>
+<td>Performance standard violations (water, power quality, air and fuel,
+noise, curtailment) (Article 4)</td>
+<td>$1,000 / day</td>
+<td>$1,500 / day</td>
+<td>$2,000 / day</td>
+</tr>
+<tr>
+<td>Operating without a required special permit or TCEQ authorization,
+or with equipment inside the required setback (Articles 3 and 4)</td>
+<td>$2,000 / day</td>
+<td>$2,000 / day</td>
+<td>$2,000 / day</td>
+</tr>
+<tr>
+<td>Breach of an incorporated community benefits or Chapter 380
+condition (Section 4.07)</td>
+<td>$2,000 / day</td>
+<td>$2,000 / day</td>
+<td>$2,000 / day</td>
+</tr>
+</tbody>
+</table>
+<p><em>The dollar amounts in this schedule are set at or below the
+statutory maximum and may be set by the City Council at any amount up to
+that maximum. These amounts are hereby adopted.</em></p>
+<p><strong>Sec. 6.03 Civil enforcement.</strong> In addition to
+penalties under Section 6.02, the City may bring a civil action under
+Subchapter B, Chapter 54 of the Texas Local Government Code to enjoin a
+violation and recover civil penalties, and may pursue every other remedy
+available at law or in equity.</p>
+<p><strong>Sec. 6.04 Revocation.</strong> After notice and a hearing,
+the City Council shall revoke a special permit on a finding that the
+permittee committed a violation that remains uncured for 30 days after
+written notice, or committed repeated violations. On revocation, the use
+shall cease.</p>
+<p><strong>Sec. 6.05 Certificate of occupancy and stop work.</strong>
+The Director shall withhold a certificate of occupancy from, and may
+issue a stop-work order to, a facility that is not in compliance with
+this Ordinance.</p>
+<p><strong>Sec. 6.06 Cumulative remedies.</strong> The remedies in this
+Article are cumulative and not exclusive.</p>
+<p><strong>ARTICLE 7. DECOMMISSIONING AND FINANCIAL
+ASSURANCE</strong></p>
+<p><strong>Sec. 7.01 Decommissioning plan.</strong></p>
+<p>(a) The applicant shall submit at application a decommissioning plan,
+prepared by an independent licensed professional engineer, stating the
+full cost of removing all structures, equipment, foundations,
+generators, tanks, and substations, and of restoring the site.</p>
+<p>(b) An application without a decommissioning plan shall not be
+accepted.</p>
+<p><strong>Sec. 7.02 Financial assurance.</strong></p>
+<p>(a) Before issuance of a certificate of occupancy, the applicant
+shall post financial assurance, as a surety bond, an irrevocable letter
+of credit, or a cash deposit, in an amount equal to 100 percent of the
+decommissioning cost estimated under Section 7.01, naming the City as
+beneficiary.</p>
+<p>(b) A certificate of occupancy shall not be issued until the
+financial assurance is posted.</p>
+<p><strong>Sec. 7.03 Review and adjustment.</strong></p>
+<p>(a) An independent licensed professional engineer shall review and
+update the decommissioning cost estimate and the financial assurance
+amount not less than once every 3 years.</p>
+<p>(b) The amount shall be adjusted for inflation using the Engineering
+News-Record Construction Cost Index (ENR-CCI).</p>
+<p>(c) Failure to maintain the financial assurance at the required
+amount shall be a violation subject to a penalty under Section 6.02 and
+grounds for revocation under Section 6.04.</p>
+<p><strong>Sec. 7.04 Abandonment and drawdown.</strong></p>
+<p>(a) A facility that ceases operation for 12 consecutive months shall
+be deemed abandoned.</p>
+<p>(b) On abandonment, the permittee shall complete decommissioning
+within 12 months.</p>
+<p>(c) If the permittee fails to decommission, the City may draw on the
+financial assurance and complete decommissioning, and the permittee
+shall remain liable for any cost exceeding the financial assurance.</p>
+<p><strong>ARTICLE 8. SEVERABILITY</strong></p>
+<p><strong>Sec. 8.01 Severability.</strong> If any provision of this
+Ordinance, or its application to any person or circumstance, is held
+invalid, the invalidity shall not affect other provisions or
+applications that can be given effect without the invalid provision or
+application, and to this end the provisions of this Ordinance are
+severable.</p>
+<p><strong>Sec. 8.02 Conflicts.</strong> If this Ordinance conflicts
+with another provision of the City Code, the more stringent provision
+shall govern to the extent permitted by law.</p>
+<p><strong>Sec. 8.03 Effective date.</strong> This Ordinance shall take
+effect upon its adoption and publication as required by law.</p>
+<p><strong>SCHEDULE OF PROPOSED LOCAL POLICY VALUES (NOW FILLED
+ABOVE)</strong></p>
+<p><em>Each value below is the policy choice proposed by the drafter and
+now filled into the text above. The City Council may set any of these
+within the stated legal limits. Every operative standard tied to a
+federal, state, or industry source is already fixed in the text
+above.</em></p>
+<p><strong>Item 1 (proposed: City hillside/ridgeline/scenic/open-space
+overlays) (Sec. 2.04(g))</strong> Names of the City overlay districts to
+include in "environmentally sensitive area" (for example, Ridgeline
+Preservation or Hillside overlays).</p>
+<p><strong>Item 2 (proposed: 1,000 feet) (Sec. 3.03(b))</strong>
+Written-notice radius, in feet, to nearby property owners (Chapter 211
+minimum is 200 feet; many cities use 300 to 500 feet).</p>
+<p><strong>Item 3 (proposed: 250 acre-feet/year) (Sec. 4.01(a))</strong>
+Annual potable water withdrawal cap, in acre-feet, per facility.</p>
+<p><strong>Item 4 (proposed: 90 percent) (Sec. 4.01(a))</strong> Minimum
+share of cooling water that shall be supplied from reclaimed or
+non-potable sources, as a percent.</p>
+<p><strong>Item 5 (proposed: 30 days) (Sec. 4.01(c))</strong> Days of
+continued potable exceedance that trigger revocation.</p>
+<p><strong>Item 6 (proposed: 30 days) (Sec. 4.02(e))</strong> Cure
+period, in days, for a power quality exceedance.</p>
+<p><strong>Item 7 (proposed: 50 hours/engine/year) (Sec.
+4.03(c))</strong> Non-emergency generator operating hours per engine per
+year (federal emergency-engine practice is 100 hours per year).</p>
+<p><strong>Item 8 (proposed: 55 dBA day) (Sec. 4.04(a))</strong> Daytime
+sound limit, in dBA, at the property line.</p>
+<p><strong>Item 9 (proposed: 50 dBA night) (Sec. 4.04(a))</strong>
+Nighttime sound limit, in dBA, at the property line.</p>
+<p><strong>Item 10 (proposed: 7 years) (Sec. 5.01(b))</strong>
+Metering-data retention period, in years.</p>
+<p><strong>Item 11 (penalty schedule adopted as shown: $500 / $1,000 /
+$2,000 per day) (Sec. 6.02)</strong> Confirm the per-day penalty
+amounts; any amount up to $2,000 per day per violation is authorized by
+Tex. Local Gov't Code Sec. 54.001(b).</p>
+<p><strong>Item 12 (proposed: 30 days) (Sec. 6.04)</strong> Cure period,
+in days, after written notice before revocation.</p>
+<p><strong>Item 13 (proposed: ENR Construction Cost Index) (Sec.
+7.03(b))</strong> Inflation index for adjusting the financial assurance
+amount.</p>
+<p><strong>Item 14 (proposed: 12 months) (Sec. 7.04(a))</strong> Months
+of ceased operation that constitute abandonment.</p>
+<p><strong>Item 15 (proposed: 12 months) (Sec. 7.04(b))</strong> Months
+to complete decommissioning after abandonment.</p>
+<p><strong>Item 16 (proposed: upon adoption and publication) (Sec.
+8.03)</strong> Effective date of the Ordinance.</p>
+<p><strong>EVIDENCE APPENDIX: FINDINGS AND SOURCES</strong></p>
+<p><em>This appendix summarizes the evidentiary basis for the Findings.
+The full record is compiled in the companion Evidence Record (Celaya
+Solutions Research LLC, June 2026). Citations to El Paso area facilities
+are offered as the documented regional record supporting generally
+applicable standards and do not direct this Ordinance at any single
+project.</em></p>
+<table>
+<colgroup>
+<col style="width: 51%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Finding</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr>
+<td>Hueco and Mesilla Bolson withdrawn faster than recharge; shared
+regional basin.</td>
+<td>El Paso Water, Our Aquifers; Texas Tribune (Apr. 2025); Bureau of
+Reclamation, Rio Grande Project.</td>
+</tr>
+<tr>
+<td>About 105 MGD demand; about 8.71 MGD surplus; combined data-center
+draw about 17.9 percent of surplus; supply figure relied upon never
+identified.</td>
+<td>Celaya Solutions water analysis (Feb. 2026); Texas Tribune; Bureau
+of Reclamation; El Paso Water Conservation Plan (2024).</td>
+</tr>
+<tr>
+<td>Meta facility in Northeast El Paso authorized to up to 1,500,000 gpd
+potable and about 100 MW of grid load.</td>
+<td>El Paso Matters (Oct. 15 and Dec. 2, 2025); Texas Standard; Celaya
+load study (CS-INST-007).</td>
+</tr>
+<tr>
+<td>Wiwynn facility in Socorro about 150 MW of grid load.</td>
+<td>El Paso Matters (Mar. 2025); Celaya load study (CS-INST-007).</td>
+</tr>
+<tr>
+<td>Project Jupiter water claims unsupported by technical data; no
+cumulative regional water analysis; CRRUA capacity not analyzed.</td>
+<td>Petition, Case D-307-CV-2025-02766; Project Jupiter Fully Executed
+MOU (Sept. 24, 2025).</td>
+</tr>
+<tr>
+<td>Project Jupiter microgrid up to 2,880 MW, 8,760 hours per year;
+about 499 tons NOx and millions of tons of greenhouse gases per
+year.</td>
+<td>Petition, Case D-307-CV-2025-02766; NMED air-permit applications
+(D1-2025-AR-0020 and D1-2025-AR-0021); Celaya load study
+(CS-INST-007).</td>
+</tr>
+<tr>
+<td>New Mexico industrial revenue bonds authorized up to $165 billion;
+50 percent gross-receipts-tax share for ten years.</td>
+<td>Jupiter IRB Ordinances and bond documents; LEDA Ordinance No.
+368-2025.</td>
+</tr>
+<tr>
+<td>El Paso Electric peak 2,173 MW against about 2,300 MW capacity; up
+to 1,650 MW large-load need; $3.5B upgrades and a $22+/month rate
+increase proposed.</td>
+<td>Celaya load study (CS-INST-007), citing EPE 2024 System Expansion
+Plan, EPE All-Source RFP (July 2025), Fitch, and El Paso Matters.</td>
+</tr>
+<tr>
+<td>El Paso is non-ERCOT, so Senate Bill 6 (2025) large-load protections
+do not reach it.</td>
+<td>PUCT rule 16 TAC 25.194; published SB 6 analyses (Greenberg Traurig;
+Perkins Coie); WECC and El Paso Electric.</td>
+</tr>
+<tr>
+<td>No mechanism requires regional data centers to disclose or mitigate
+cumulative impact.</td>
+<td>Project Jupiter record; El Paso staff Data Center Policy Framework
+(Berjano, May 2026).</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+  <div class="foot">Public comment packet prepared by Celaya Solutions Research LLC, El Paso, Texas &middot; June 9, 2026 &middot; Sources compiled in the Evidence Record at celaya-solutions.github.io/Draft-Policy &middot; Not legal advice.</div>
+</section>
+
+</body>
+</html>
