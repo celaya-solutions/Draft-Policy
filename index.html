@@ -111,6 +111,12 @@ posthog.init('phc_FHAcCX8OXdgcCrWcThblrmlRdb9uDyMWmlGdy869F1P',{api_host:'https:
   .doc{display:block;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s}
   .doc:hover{border-color:var(--navy);box-shadow:0 2px 10px rgba(14,77,100,.08)}
   .doc .t{font-weight:700;color:var(--navy-d)} .doc .d{font-size:13.5px;color:var(--muted);margin-top:3px} .doc .x{font-size:12px;color:var(--gold-d);font-weight:700;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+  .docgroup{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold-d);font-weight:700;margin:24px 0 2px}
+  .docactions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .doclink{font-size:13px;font-weight:700;color:var(--navy);text-decoration:none;padding:7px 12px;border:1px solid var(--line);border-radius:7px}
+  .doclink:hover{border-color:var(--navy);background:var(--soft)}
+  .dlbtn{font-size:13px;font-weight:700;color:#fff;background:var(--navy);text-decoration:none;padding:7px 12px;border-radius:7px;display:inline-flex;align-items:center;gap:6px}
+  .dlbtn:hover{background:var(--navy-d)}
 
   .lab{background:var(--soft);border-radius:12px;padding:22px;margin-top:8px}
 
@@ -416,15 +422,52 @@ posthog.init('phc_FHAcCX8OXdgcCrWcThblrmlRdb9uDyMWmlGdy869F1P',{api_host:'https:
 <section id="docs">
   <div class="wrap">
     <div class="eyebrow" data-i18n="docs.eyebrow">The Receipts</div>
-    <h2 data-i18n="docs.h2">Documents you can read and share</h2>
-    <p data-i18n="docs.p">Everything here is public and free to use. The legal documents are drafts prepared for community and Council use, and should be reviewed by counsel before any official action.</p>
+    <h2 data-i18n="docs.h2">Documents you can read, download, and share</h2>
+    <p data-i18n="docs.p">Everything here is public and free to use. Each document has its own page; you can download the file with one click. The legal documents prepared by the lab are drafts and should be reviewed by counsel before any official action.</p>
+
+    <h3 class="docgroup" data-i18n="docs.g1">The actual Meta deal &mdash; primary sources (City records)</h3>
     <div class="docs">
-      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_DRAFT.docx"><div class="t" data-i18n="docs.d1t">Draft Data Center Ordinance</div><div class="d" data-i18n="docs.d1d">The full model city law: definitions, permits, water and power limits, enforcement, cleanup bonds.</div><div class="x" data-i18n="docs.word">Word document</div></a>
-      <a class="doc" href="documents/Project_Jupiter_Evidence_Record.docx"><div class="t" data-i18n="docs.d2t">Evidence Record</div><div class="d" data-i18n="docs.d2d">The fact brief, water-balance math, timeline, and index of 68 public records behind the numbers.</div><div class="x" data-i18n="docs.word2">Word document</div></a>
-      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_CROSSWALK.docx"><div class="t" data-i18n="docs.d3t">Crosswalk</div><div class="d" data-i18n="docs.d3d">How the model ordinance maps to the City's own draft framework, section by section.</div><div class="x" data-i18n="docs.word3">Word document</div></a>
-      <a class="doc" href="explainer.html"><div class="t" data-i18n="docs.d4t">One-Page Explainer</div><div class="d" data-i18n="docs.d4d">A short, printable version of this briefing for handouts and tabling.</div><div class="x" data-i18n="docs.open">Open page &rarr;</div></a>
+      <div class="doc">
+        <div class="t" data-i18n="docs.a380t">Chapter 380 Economic Development Agreement</div>
+        <div class="d" data-i18n="docs.a380d">The City's 380 grant to Meta's shell (WURLDWIDE LLC): 80% property-tax grant, 15 yrs per phase, no dollar cap, plus road money and fee waivers.</div>
+        <div class="docactions"><a class="doclink" href="agreement-380.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/Ex-Wurldwide-380-Agreement-Seafox.pdf" download data-i18n="docs.dlpdf">Download PDF</a></div>
+      </div>
+      <div class="doc">
+        <div class="t" data-i18n="docs.a312t">Chapter 312 Tax Abatement Agreement</div>
+        <div class="d" data-i18n="docs.a312d">80% off City property taxes &mdash; buildings and equipment &mdash; 10 years per phase, up to 5 phases. Same shell company.</div>
+        <div class="docactions"><a class="doclink" href="agreement-312.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/Ex-Wurldwide-312-Agreement-Seafox.pdf" download data-i18n="docs.dlpdf">Download PDF</a></div>
+      </div>
+      <div class="doc">
+        <div class="t" data-i18n="docs.memot">Seafox / Stan Roberts Packet</div>
+        <div class="d" data-i18n="docs.memod">City Attorney memo + Dec 5, 2023 Resolution: $5M in TED road funds, fee waivers, and the City selling Meta the land.</div>
+        <div class="docactions"><a class="doclink" href="memo-stan-roberts.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/Memo-Seafox-Stan-Roberts-Development-Packet.pdf" download data-i18n="docs.dlpdf">Download PDF</a></div>
+      </div>
     </div>
-    <p style="margin-top:18px"><button class="btn" type="button" onclick="window.print()" data-i18n="docs.print">Print or save this page as PDF</button></p>
+
+    <h3 class="docgroup" data-i18n="docs.g2">Our analysis &amp; model law</h3>
+    <div class="docs">
+      <div class="doc">
+        <div class="t" data-i18n="docs.d1t">Draft Data Center Ordinance</div>
+        <div class="d" data-i18n="docs.d1d">The full model city law: definitions, permits, water and power limits, enforcement, cleanup bonds.</div>
+        <div class="docactions"><a class="doclink" href="ordinance.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/El_Paso_Data_Center_Ordinance_DRAFT.docx" download data-i18n="docs.dlword">Download Word</a></div>
+      </div>
+      <div class="doc">
+        <div class="t" data-i18n="docs.d2t">Evidence Record</div>
+        <div class="d" data-i18n="docs.d2d">The fact brief, water-balance math, timeline, and index of 68 public records behind the numbers.</div>
+        <div class="docactions"><a class="doclink" href="evidence-record.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/Project_Jupiter_Evidence_Record.docx" download data-i18n="docs.dlword">Download Word</a></div>
+      </div>
+      <div class="doc">
+        <div class="t" data-i18n="docs.d3t">Crosswalk</div>
+        <div class="d" data-i18n="docs.d3d">How the model ordinance maps to the City's own draft framework, section by section.</div>
+        <div class="docactions"><a class="doclink" href="crosswalk.html" data-i18n="docs.view">View page &rarr;</a><a class="dlbtn" href="documents/El_Paso_Data_Center_Ordinance_CROSSWALK.docx" download data-i18n="docs.dlword">Download Word</a></div>
+      </div>
+      <div class="doc">
+        <div class="t" data-i18n="docs.d4t">One-Page Explainer</div>
+        <div class="d" data-i18n="docs.d4d">A short, printable version of this briefing for handouts and tabling.</div>
+        <div class="docactions"><a class="doclink" href="explainer.html" data-i18n="docs.open">Open page &rarr;</a><a class="dlbtn" href="explainer.html" data-i18n="docs.openprint">Open &amp; print</a></div>
+      </div>
+    </div>
+    <p style="margin-top:20px"><button class="btn" type="button" onclick="window.print()" data-i18n="docs.print">Print or save this page as PDF</button></p>
   </div>
 </section>
 
@@ -561,8 +604,14 @@ posthog.init('phc_FHAcCX8OXdgcCrWcThblrmlRdb9uDyMWmlGdy869F1P',{api_host:'https:
     "act.ask4":"Exigir una <strong>fianza de desmantelamiento</strong> antes de abrir.",
     "act.ask5":"<strong>Publicar el n&uacute;mero de suministro.</strong> Si no pueden mostrar las cuentas, no aprueben.",
     "docs.eyebrow":"Los comprobantes",
-    "docs.h2":"Documentos que puede leer y compartir",
-    "docs.p":"Todo aqu&iacute; es p&uacute;blico y de uso libre. Los documentos legales son borradores preparados para uso de la comunidad y del Concejo, y deben ser revisados por un abogado antes de cualquier acci&oacute;n oficial.",
+    "docs.h2":"Documentos que puede leer, descargar y compartir",
+    "docs.p":"Todo aqu&iacute; es p&uacute;blico y de uso libre. Cada documento tiene su propia p&aacute;gina; puede descargar el archivo con un clic. Los documentos legales preparados por el laboratorio son borradores y deben ser revisados por un abogado antes de cualquier acci&oacute;n oficial.",
+    "docs.g1":"El acuerdo real con Meta &mdash; fuentes primarias (registros municipales)",
+    "docs.g2":"Nuestro an&aacute;lisis y ley modelo",
+    "docs.a380t":"Acuerdo de Desarrollo Econ&oacute;mico (Cap&iacute;tulo 380)","docs.a380d":"La subvenci&oacute;n 380 de la Ciudad a la empresa fantasma de Meta (WURLDWIDE LLC): 80% del impuesto predial, 15 a&ntilde;os por fase, sin tope, m&aacute;s dinero para calles y exenci&oacute;n de cuotas.",
+    "docs.a312t":"Acuerdo de Abatimiento de Impuestos (Cap&iacute;tulo 312)","docs.a312d":"80% de descuento en impuestos prediales de la Ciudad &mdash; edificios y equipo &mdash; 10 a&ntilde;os por fase, hasta 5 fases. La misma empresa fantasma.",
+    "docs.memot":"Paquete Seafox / Stan Roberts","docs.memod":"Memo del Abogado de la Ciudad + Resoluci&oacute;n del 5 de diciembre de 2023: $5M en fondos TED para calles, exenci&oacute;n de cuotas, y la Ciudad vendiendo el terreno a Meta.",
+    "docs.view":"Ver p&aacute;gina &rarr;","docs.dlpdf":"Descargar PDF","docs.dlword":"Descargar Word","docs.openprint":"Abrir e imprimir",
     "docs.d1t":"Borrador de Ordenanza de Centros de Datos","docs.d1d":"La ley municipal modelo completa: definiciones, permisos, l&iacute;mites de agua y energ&iacute;a, cumplimiento, fianzas de limpieza.","docs.word":"Documento de Word",
     "docs.d2t":"Registro de Evidencia","docs.d2d":"El informe de hechos, las cuentas del balance de agua, la cronolog&iacute;a, y el &iacute;ndice de 68 registros p&uacute;blicos detr&aacute;s de los n&uacute;meros.","docs.word2":"Documento de Word",
     "docs.d3t":"Tabla comparativa (Crosswalk)","docs.d3d":"C&oacute;mo la ordenanza modelo corresponde al borrador de la Ciudad, secci&oacute;n por secci&oacute;n.","docs.word3":"Documento de Word",
