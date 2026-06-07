@@ -93,6 +93,33 @@
 
   .lab{background:var(--soft);border-radius:12px;padding:22px;margin-top:8px}
   .es{background:var(--soft2);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:8px 0}
+
+  /* alert banner */
+  .alert{background:#fff6e6;border:1px solid #f0d28a;border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0}
+  .alert .when{display:inline-block;background:var(--gold);color:#3a2a00;font-weight:700;font-size:12.5px;padding:3px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+  .alert .head{font-weight:700;color:var(--navy-d);font-size:18px;margin:8px 0 4px}
+
+  /* timeline */
+  .tl{list-style:none;margin:20px 0 0 0;padding-left:0}
+  .tl li{position:relative;padding:0 0 18px 28px;border-left:2px solid var(--line);margin-left:6px}
+  .tl li:last-child{border-left-color:transparent}
+  .tl li::before{content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid #fff}
+  .tl li.next::before{background:var(--gold)}
+  .tl .d{font-weight:700;color:var(--navy-d);font-size:14px}
+  .tl .e{font-size:15.5px;color:#2b3744;margin-top:2px}
+
+  /* faq */
+  .faq{border:1px solid var(--line);border-radius:10px;margin:12px 0;background:#fff}
+  .faq summary{cursor:pointer;padding:15px 18px;font-weight:700;color:var(--navy-d);font-size:16.5px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"+";color:var(--gold-d);font-weight:700;margin-right:10px}
+  .faq[open] summary::before{content:"\2212"}
+  .faq .body{padding:0 18px 16px 18px;color:#2b3744}
+  .artgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+  .art{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:15px 17px}
+  .art .t{font-weight:700;color:var(--navy);font-size:15px;margin-bottom:5px}
+  .art p{font-size:14.5px;color:#3a4654;margin-bottom:0}
+  @media(max-width:640px){.artgrid{grid-template-columns:1fr}}
   footer{padding:30px 0 60px;color:var(--muted);font-size:13.5px}
   .disc{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--muted);margin:18px 0}
   .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;border:none;cursor:pointer}
@@ -110,13 +137,14 @@
       Celaya Solutions Research
     </a>
     <div class="navlinks">
+      <a href="#now">What's Happening</a>
       <a href="#water">Water</a>
       <a href="#power">Power</a>
       <a href="#building">What's Coming</a>
       <a href="#rule">The Fix</a>
+      <a href="#faq">Q&amp;A</a>
       <a href="#act">Take Action</a>
       <a href="#docs">Documents</a>
-      <a href="#lab">The Lab</a>
     </div>
   </div>
 </nav>
@@ -138,6 +166,31 @@
   <div class="wrap">
     <p class="lead">A data center is a huge building full of computers. They run hot, so they drink water and power to stay cool and switched on. We are not against technology. We build it. The question is simple and fair: <strong>do we have enough water and power for this, and who pays if we do not?</strong></p>
     <p>This page is written by an El Paso research lab, in plain language, so any resident can understand what is happening and speak up. The full legal and technical documents are linked at the bottom.</p>
+  </div>
+</section>
+
+<!-- WHAT'S HAPPENING NOW -->
+<section id="now">
+  <div class="wrap">
+    <div class="eyebrow">What's Happening Now</div>
+    <h2>The decisions are being made this month</h2>
+    <div class="alert">
+      <span class="when">Vote: Monday, June 9, 2026</span>
+      <div class="head">City Council is being asked to look at canceling the Meta deal.</div>
+      <p style="margin-bottom:0">Two Council members (Josh Acevedo, District 2, and Lily Lim&oacute;n, District 7) put an item on the <strong>June 9</strong> agenda asking the city to study ending the 2023 tax-break agreement with Meta. The Mayor is against canceling and has warned it could lead to lawsuits. City lawyers say the deal is "legally binding" and hard to undo. <strong>This is the meeting to show up to or write about.</strong> Agendas: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</p>
+    </div>
+    <p class="lead">Here is the short story of how we got here, so you can follow what comes next.</p>
+    <ul class="tl">
+      <li><div class="d">December 5, 2023</div><div class="e">City Council voted to give Meta an <strong>80% property-tax break</strong> for decades, plus $12.5M in city money, for a $10 billion data center promising about 300 permanent jobs.</div></li>
+      <li><div class="d">May 21&ndash;26, 2026</div><div class="e">Council voted <strong>unanimously to stop giving tax breaks</strong> to future data centers and released a <strong>draft Data Center Policy Framework</strong> (a 33-page policy paper) for public comment.</div></li>
+      <li><div class="d">June 2&ndash;3, 2026</div><div class="e">A push began to cancel the existing Meta deal. City officials said the city <strong>cannot simply walk away</strong> from a signed 2023 contract without legal risk.</div></li>
+      <li class="next"><div class="d">Monday, June 9, 2026 &mdash; coming up</div><div class="e">Council takes up the request to <strong>explore terminating the Meta agreement</strong>. Public comment is open at City Hall and online.</div></li>
+      <li class="next"><div class="d">July 2026 (expected)</div><div class="e">The Meta data center campus is expected to <strong>begin operating</strong>.</div></li>
+    </ul>
+    <div class="callout" style="margin-top:22px">
+      <div class="q">Why this matters now</div>
+      <p style="margin-bottom:0">The City's draft is a <strong>policy paper</strong> &mdash; a list of good ideas with no teeth. Our draft is an <strong>enforceable city law</strong> with real limits, real penalties, and real proof requirements. The public-comment window is open <em>right now</em>, which is the moment to ask for the stronger version. See <a href="#act">Take Action</a> below.</p>
+    </div>
   </div>
 </section>
 
@@ -206,6 +259,44 @@
       <li><strong>Daily fines</strong> and loss of permit if they break the rules.</li>
     </ul>
     <p>It is written to hold up in court: facially neutral, grounded in sourced facts, and built on existing federal, state, and Texas law. The full ordinance and the evidence behind it are in the <a href="#docs">Documents</a> section.</p>
+
+    <h3>What each part does, in plain words</h3>
+    <p>A city law is split into "articles." Here is what each one does, with no legal jargon.</p>
+    <div class="artgrid">
+      <div class="art"><div class="t">1. Why the rule exists</div><p>Protect our water, keep utility bills fair, guard against noise, pollution, and fire, and make the company pay its own costs. It says plainly: we are not banning data centers.</p></div>
+      <div class="art"><div class="t">2. What counts as "big"</div><p>A data center that uses <strong>40 MW</strong> or more of computer power, or <strong>100 MW</strong> or more of total electricity. Cross either line and the rules apply. No arguing your way out with a nice efficiency score.</p></div>
+      <div class="art"><div class="t">3. Where it can go</div><p>Only in heavy commercial/industrial zones, and only with a <strong>special permit</strong> &mdash; a public hearing and a Council vote every time. Plus the <strong>1,000-foot</strong> buffer from homes, schools, parks, hospitals, and churches.</p></div>
+      <div class="art"><div class="t">4. The actual limits</div><p>A water cap, recycled water for cooling, clean power on the grid, air permits for generators, a noise limit, and the big one: the company pays <strong>100%</strong> of the upgrades it causes. None of it lands on your bill.</p></div>
+      <div class="art"><div class="t">5. Proof, not promises</div><p>Real-time meters on all water and power, a public report <strong>every three months</strong>, and an outside audit <strong>every year</strong> &mdash; paid for by the company. A rule you cannot measure is just a wish.</p></div>
+      <div class="art"><div class="t">6. Teeth</div><p>Every day a rule is broken counts separately, with fines up to <strong>$2,000 a day</strong> (the most Texas law allows). The city can sue and revoke the permit. No permit, no operating.</p></div>
+      <div class="art"><div class="t">7. Clean up after yourself</div><p>Before it opens, the company posts a <strong>bond worth 100%</strong> of the cost to tear the building down and restore the land. If it walks away, the public is not stuck with an empty shell.</p></div>
+      <div class="art"><div class="t">8. Built to survive court</div><p>If a judge strikes one part, the rest still stands, and the stricter rule wins in a conflict. Sixteen blanks are left for Council to set the exact local numbers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Straight Answers</div>
+    <h2>The hard questions, answered plainly</h2>
+    <p class="lead">These are the questions people ask most. Use the answers when you talk to neighbors or your Council member.</p>
+
+    <details class="faq"><summary>Are you trying to ban data centers?</summary><div class="body">No. We are asking for a permit, clear limits, and accountability. A company can still build if it meets the terms. "Prove you won't take the water and power we need, and pay your own way."</div></details>
+
+    <details class="faq"><summary>Are you targeting Meta or one company?</summary><div class="body">No. The rules apply to every big data center the same way. That is on purpose &mdash; it is fair, and it is what makes the law hold up in court.</div></details>
+
+    <details class="faq"><summary>Won't this scare away jobs and money?</summary><div class="body">A data center is mostly a building full of machines. It brings a lot of <em>construction</em> jobs but few permanent ones &mdash; the Meta project lists about 300. The rule just makes sure those few jobs don't come at the cost of everyone's water and power bills. Serious companies can meet basic standards.</div></details>
+
+    <details class="faq"><summary>Don't we have plenty of water?</summary><div class="body">It depends on which number you use. If you count the water we actually pump and treat today, we are near the limit. Officials have never said which number they used to decide we have enough. That is the question to ask.</div></details>
+
+    <details class="faq"><summary>Isn't the state already handling this?</summary><div class="body">Not for El Paso. The big new state law (Senate Bill 6) only covers the ERCOT power grid. El Paso is on the separate Western grid, so SB 6 does not protect us. The City has to act on its own.</div></details>
+
+    <details class="faq"><summary>Why make them pay for the upgrades?</summary><div class="body">Because if they don't, you do &mdash; through higher utility bills. The utility floated $3.5 billion in upgrades and a $22-a-month rate increase that Council rejected. "Pay your own way" keeps the cost on the company that caused the need.</div></details>
+
+    <details class="faq"><summary>Can the City just cancel the Meta deal?</summary><div class="body">Not easily. The 2023 agreement is a signed, legally binding contract. City lawyers warn that walking away could mean years of lawsuits and big damages. That is exactly why a strong, equal rule going forward matters: it sets clear terms <em>before</em> the next deal is signed.</div></details>
+
+    <details class="faq"><summary>What is "PUE" and "WUE"? Do they let companies dodge the rules?</summary><div class="body">They are efficiency scores (for power and water). Under our draft they are <strong>for reporting only</strong>. A company cannot use a nice-sounding efficiency number to escape the size limits. The size is what counts.</div></details>
   </div>
 </section>
 
@@ -216,9 +307,10 @@
     <h2>What you can do this week</h2>
     <div class="do">
       <ul>
-        <li><strong>Comment now.</strong> The City released a draft data-center policy for public review. Learn more and comment at <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</li>
-        <li><strong>Ask the one question</strong> (above) of your City Council member and county commissioner. Make them show the number.</li>
-        <li><strong>Speak for three minutes</strong> at a Council meeting. Agendas at <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</li>
+        <li><strong>Comment on the City's draft &mdash; the window is open now.</strong> The City put its draft Data Center Policy Framework online for public feedback. Read it and leave a comment directly at <a href="https://epcap.konveio.com/draft-data-center-policy-framework" target="_blank" rel="noopener">epcap.konveio.com/draft-data-center-policy-framework</a> (also linked from <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>). Ask for an <em>enforceable</em> ordinance, not just a policy paper.</li>
+        <li><strong>Show up June 9.</strong> Council takes up the Meta agreement on <strong>Monday, June 9, 2026</strong>. Sign up to speak (three minutes) or send a written comment. Agendas and sign-up: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</li>
+        <li><strong>Ask the one question</strong> (above) of your City Council member and county commissioner: <em>which water-supply number, and where is it published?</em> Make them show the number.</li>
+        <li><strong>File an open-records request.</strong> Ask for the supply figure and any cost or load studies behind the approvals, at the El Paso Public Information Center: <a href="https://elpaso.govqa.us" target="_blank" rel="noopener">elpaso.govqa.us</a>. Records create a paper trail.</li>
         <li><strong>Share this page</strong> with your neighbors, your church, and small-business owners.</li>
       </ul>
     </div>
@@ -268,7 +360,8 @@
     <h2>Resumen</h2>
     <div class="es">
       <p>Quieren construir centros de datos grandes cerca de El Paso. Usan mucha agua y electricidad. Usamos <strong>105 millones</strong> de galones de agua al d&iacute;a y solo nos sobran <strong>8.7 millones</strong>. Los centros podr&iacute;an usar <strong>1.56 millones</strong>, casi el <strong>18%</strong> de lo que nos sobra. Nuestra red el&eacute;ctrica casi llega a su l&iacute;mite: puede generar 2,300 megavatios y ya lleg&oacute; a 2,173.</p>
-      <p style="margin-bottom:0">Pregunta a tu representante: <em>"&iquest;Cu&aacute;l n&uacute;mero de agua usan para decir que hay suficiente, y d&oacute;nde est&aacute; publicado?"</em> Si no pueden mostrar el n&uacute;mero, no deber&iacute;an aprobar. M&aacute;s informaci&oacute;n: <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</p>
+      <p>Pregunta a tu representante: <em>"&iquest;Cu&aacute;l n&uacute;mero de agua usan para decir que hay suficiente, y d&oacute;nde est&aacute; publicado?"</em> Si no pueden mostrar el n&uacute;mero, no deber&iacute;an aprobar.</p>
+      <p style="margin-bottom:0"><strong>Act&uacute;a ahora:</strong> El Concejo Municipal trata el acuerdo con Meta el <strong>lunes 9 de junio de 2026</strong>. Puedes hablar tres minutos o enviar un comentario. La ciudad tambi&eacute;n acepta comentarios sobre su borrador de pol&iacute;tica en <a href="https://epcap.konveio.com/draft-data-center-policy-framework" target="_blank" rel="noopener">epcap.konveio.com</a>. M&aacute;s informaci&oacute;n: <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</p>
     </div>
     <button class="btn" onclick="window.print()">Print or save this page as PDF</button>
   </div>
@@ -278,7 +371,7 @@
 <footer>
   <div class="wrap">
     <h3 style="color:var(--navy-d)">Sources</h3>
-    <p>Water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; New Mexico Environment Department air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: New Mexico Third Judicial District Court, Case No. D-307-CV-2025-02766. Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
+    <p>Water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; New Mexico Environment Department air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: New Mexico Third Judicial District Court, Case No. D-307-CV-2025-02766. City policy timeline and June 9, 2026 Council action: El Paso Matters (May&ndash;June 2026); KVIA (May 26, 2026); City of El Paso Data Center Policy Framework draft and public-comment platform (epcap.konveio.com, 2026). Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
     <div class="disc">Prepared by <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas. This is an independent community briefing and is <strong>not</strong> an official City of El Paso publication. The legal documents are drafts and are not legal advice; consult counsel before any official action. Content is public domain. Corrections welcome.</div>
     <p style="color:#8a93a0">&copy; 2026 Celaya Solutions Research LLC &middot; El Paso, Texas &middot; Built to be checked.</p>
   </div>
