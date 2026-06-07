@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Paso Data Centers: Water, Power, and What It Means for You</title>
+<title data-i18n="meta.title">El Paso Data Centers: Water, Power, and What It Means for You</title>
 <meta name="description" content="An independent, plain-language guide to the data centers coming to the El Paso region: how much water and power they need, how much we have, and what a fair city rule would do. Prepared by Celaya Solutions Research LLC.">
 <meta name="author" content="Celaya Solutions Research LLC">
 <meta property="og:title" content="El Paso Data Centers: The Numbers You Should See">
@@ -24,10 +24,17 @@
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+
+<!-- Analytics: PostHog (US cloud) -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_FHAcCX8OXdgcCrWcThblrmlRdb9uDyMWmlGdy869F1P',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',defaults:'2025-05-24'});
+</script>
+
 <style>
   :root{
-    --bg:#ffffff; --ink:#15212c; --muted:#5a6675;
-    --navy:#0e4d64; --navy-d:#0a3a4d; --gold:#f2a900; --gold-d:#b9780a;
+    --bg:#ffffff; --ink:#15212c; --muted:#586472;
+    --navy:#0e4d64; --navy-d:#0a3a4d; --gold:#f2a900; --gold-d:#9c6708;
     --red:#c0392b; --green:#1e8a5a; --line:#e4e8eb; --soft:#f5f8f9; --soft2:#eef3f5;
     --serif:Georgia,'Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
@@ -37,24 +44,37 @@
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
   a{color:var(--navy)}
+
+  /* accessibility helpers */
+  .vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:11px 16px;border-radius:0 0 8px 0;z-index:300;font-weight:700;text-decoration:none}
+  .skip:focus{left:0}
+  a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:3px}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
 
   /* top nav */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  .nav .row{display:flex;align-items:center;gap:14px;max-width:var(--wrap);margin:0 auto;padding:10px 22px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav .row{display:flex;align-items:center;gap:12px;max-width:var(--wrap);margin:0 auto;padding:10px 22px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy-d);text-decoration:none;font-size:15px;white-space:nowrap}
   .navlinks{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
   .navlinks a{font-size:13px;color:var(--muted);text-decoration:none;padding:6px 9px;border-radius:6px;font-weight:600}
   .navlinks a:hover{background:var(--soft2);color:var(--navy-d)}
+  .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+  .navlinks + .langtoggle{margin-left:8px}
+  .langtoggle:first-of-type{margin-left:auto}
+  .langtoggle button{background:#fff;border:0;padding:7px 11px;font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit}
+  .langtoggle button[aria-pressed="true"]{background:var(--navy);color:#fff}
 
   /* hero */
   .hero{background:linear-gradient(180deg,#0e4d64 0%,#0a3a4d 100%);color:#fff;padding:46px 0 40px}
   .hero .kick{text-transform:uppercase;letter-spacing:2.5px;font-size:12px;font-weight:700;color:var(--gold)}
   .hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 14px;font-weight:700}
-  .hero p{font-size:19px;color:#d8e3e8;max-width:680px}
+  .hero p{font-size:19px;color:#dde7ec;max-width:680px}
   .pill{display:inline-block;margin-top:20px;background:var(--gold);color:#3a2a00;font-weight:700;padding:11px 18px;border-radius:8px;text-decoration:none;font-size:15px}
-  .pill.ghost{background:transparent;color:#fff;border:1px solid #5b8294;margin-left:8px}
-  .badge{margin-top:18px;font-size:13px;color:#bcd0d8;border-left:3px solid var(--gold);padding-left:12px}
+  .pill.ghost{background:transparent;color:#fff;border:1px solid #6a92a3;margin-left:8px}
+  .badge{margin-top:18px;font-size:13px;color:#c4d6dd;border-left:3px solid var(--gold);padding-left:12px}
 
   section{padding:42px 0;border-bottom:1px solid var(--line)}
   h2{font-family:var(--serif);font-size:clamp(23px,3.6vw,30px);color:var(--navy-d);margin-bottom:6px}
@@ -70,14 +90,15 @@
   .card.gold{border-top-color:var(--gold)} .card.red{border-top-color:var(--red)}
   .num{font-family:var(--serif);font-size:32px;font-weight:700;color:var(--navy-d);line-height:1.04}
   .card.red .num{color:var(--red)}
-  .card .lbl{font-size:14.5px;color:#3a4654;margin-top:6px}
-  .src{font-size:12px;color:#8a93a0;margin-top:9px}
+  .card .lbl{font-size:14.5px;color:#37434f;margin-top:6px}
+  .src{font-size:12px;color:#5f6b78;margin-top:9px}
 
   .callout{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 20px;margin:20px 0}
   .q{font-family:var(--serif);font-size:21px;color:var(--navy-d);font-style:italic;margin-bottom:8px}
   .analogy{background:var(--soft2);border-radius:10px;padding:16px 18px;margin:18px 0;font-size:16px}
 
   table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+  caption{text-align:left;font-size:13px;color:var(--muted);margin-bottom:8px}
   th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:14px}
   td{padding:10px 12px;border:1px solid var(--line)} tr:nth-child(even) td{background:var(--soft)}
 
@@ -92,7 +113,12 @@
   .doc .t{font-weight:700;color:var(--navy-d)} .doc .d{font-size:13.5px;color:var(--muted);margin-top:3px} .doc .x{font-size:12px;color:var(--gold-d);font-weight:700;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
 
   .lab{background:var(--soft);border-radius:12px;padding:22px;margin-top:8px}
-  .es{background:var(--soft2);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:8px 0}
+
+  /* contacts */
+  .contacts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  .contacts a{display:block;border:1px solid var(--line);border-radius:9px;padding:11px 14px;text-decoration:none;background:#fff;font-size:14px}
+  .contacts a:hover{border-color:var(--navy)}
+  .contacts .who{font-weight:700;color:var(--navy-d)} .contacts .mail{color:var(--navy);font-size:13px}
 
   /* alert banner */
   .alert{background:#fff6e6;border:1px solid #f0d28a;border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0}
@@ -118,33 +144,71 @@
   .artgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
   .art{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:15px 17px}
   .art .t{font-weight:700;color:var(--navy);font-size:15px;margin-bottom:5px}
-  .art p{font-size:14.5px;color:#3a4654;margin-bottom:0}
-  @media(max-width:640px){.artgrid{grid-template-columns:1fr}}
+  .art p{font-size:14.5px;color:#37434f;margin-bottom:0}
+
   footer{padding:30px 0 60px;color:var(--muted);font-size:13.5px}
-  .disc{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--muted);margin:18px 0}
-  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;border:none;cursor:pointer}
-  @media(max-width:640px){.cards{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.navlinks{display:none}}
-  @media print{.nav,.hero .pill,.btn{display:none}.hero{background:#fff;color:#000}.hero p{color:#333}.hero .kick,.hero h1{color:#000}body{font-size:11pt}}
+  .disc{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;color:#4a5663;margin:18px 0}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:9px 16px;border-radius:7px;font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:inherit}
+
+  /* language gate */
+  .lg{position:fixed;inset:0;z-index:200;background:rgba(8,28,38,.74);backdrop-filter:blur(4px);display:grid;place-items:center;padding:20px}
+  .lg[hidden]{display:none}
+  .lg-card{background:#fff;border-radius:16px;max-width:430px;width:100%;padding:30px 26px;text-align:center;box-shadow:0 22px 64px rgba(0,0,0,.35)}
+  .lg-card h2{font-family:var(--serif);color:var(--navy-d);font-size:22px;margin:14px 0 4px;border:0;padding:0}
+  .lg-card h2 span{display:block;font-size:19px;color:var(--navy)}
+  .lg-sub{color:var(--muted);font-size:13.5px;margin-bottom:20px;line-height:1.5}
+  .lg-btns{display:grid;gap:10px}
+  .lg-btns button{display:block;width:100%;background:var(--navy);color:#fff;border:0;padding:15px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+  .lg-btns button:hover{background:var(--navy-d)}
+  .lg-btns button.alt{background:var(--gold);color:#3a2a00}
+  .lg-btns button.alt:hover{filter:brightness(.96)}
+  .lg-note{margin-top:16px;font-size:12px;color:var(--muted)}
+
+  /* subtle view counter (owner) */
+  #vc{position:fixed;right:8px;bottom:6px;z-index:30;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.5px;color:#cfd6dc;opacity:.5;user-select:none;pointer-events:none}
+
+  @media(max-width:640px){.cards{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.artgrid{grid-template-columns:1fr}.contacts{grid-template-columns:1fr}.navlinks{display:none}}
+  @media print{.nav,.hero .pill,.btn,#vc,.lg{display:none}.hero{background:#fff;color:#000}.hero p{color:#333}.hero .kick,.hero h1{color:#000}body{font-size:11pt}}
 </style>
 </head>
 <body>
 
+<a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
+
+<!-- LANGUAGE GATE -->
+<div class="lg" id="langgate" role="dialog" aria-modal="true" aria-labelledby="lg-title" hidden>
+  <div class="lg-card">
+    <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="19" fill="#f2a900"/><g stroke="#f2a900" stroke-width="6" stroke-linecap="round"><line x1="50" y1="7" x2="50" y2="21"/><line x1="50" y1="79" x2="50" y2="93"/><line x1="7" y1="50" x2="21" y2="50"/><line x1="79" y1="50" x2="93" y2="50"/><line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/><line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/></g></svg>
+    <h2 id="lg-title">Choose your language<span lang="es">Elija su idioma</span></h2>
+    <div class="lg-sub">El Paso data centers &mdash; community briefing<br><span lang="es">Centros de datos de El Paso &mdash; informe comunitario</span></div>
+    <div class="lg-btns">
+      <button type="button" data-setlang="en">English</button>
+      <button type="button" class="alt" data-setlang="es" lang="es">Espa&ntilde;ol</button>
+    </div>
+    <div class="lg-note">You can switch anytime. <span lang="es">&middot; Puede cambiar cuando quiera.</span></div>
+  </div>
+</div>
+
 <!-- NAV -->
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="row">
     <a class="brand" href="#top">
-      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="19" fill="#f2a900"/><g stroke="#f2a900" stroke-width="6" stroke-linecap="round"><line x1="50" y1="7" x2="50" y2="21"/><line x1="50" y1="79" x2="50" y2="93"/><line x1="7" y1="50" x2="21" y2="50"/><line x1="79" y1="50" x2="93" y2="50"/><line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/><line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/></g></svg>
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="19" fill="#f2a900"/><g stroke="#f2a900" stroke-width="6" stroke-linecap="round"><line x1="50" y1="7" x2="50" y2="21"/><line x1="50" y1="79" x2="50" y2="93"/><line x1="7" y1="50" x2="21" y2="50"/><line x1="79" y1="50" x2="93" y2="50"/><line x1="18" y1="18" x2="28" y2="28"/><line x1="72" y1="72" x2="82" y2="82"/><line x1="82" y1="18" x2="72" y2="28"/><line x1="28" y1="72" x2="18" y2="82"/></g></svg>
       Celaya Solutions Research
     </a>
     <div class="navlinks">
-      <a href="#now">What's Happening</a>
-      <a href="#water">Water</a>
-      <a href="#power">Power</a>
-      <a href="#building">What's Coming</a>
-      <a href="#rule">The Fix</a>
-      <a href="#faq">Q&amp;A</a>
-      <a href="#act">Take Action</a>
-      <a href="#docs">Documents</a>
+      <a href="#now" data-i18n="nav.now">What's Happening</a>
+      <a href="#water" data-i18n="nav.water">Water</a>
+      <a href="#power" data-i18n="nav.power">Power</a>
+      <a href="#building" data-i18n="nav.coming">What's Coming</a>
+      <a href="#rule" data-i18n="nav.fix">The Fix</a>
+      <a href="#faq" data-i18n="nav.qa">Q&amp;A</a>
+      <a href="#act" data-i18n="nav.act">Take Action</a>
+      <a href="#docs" data-i18n="nav.docs">Documents</a>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language / Idioma">
+      <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+      <button type="button" data-setlang="es" aria-pressed="false">ES</button>
     </div>
   </div>
 </nav>
@@ -152,44 +216,46 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="kick">El Paso, the Sun City &middot; Community Briefing</div>
-    <h1>Data Centers, Water, and Power: The Numbers You Should See</h1>
-    <p>Giant computer warehouses are coming to our region. We pulled the public records and did the math nobody published. Here is how much water and electricity they need, how much we have, and the one question to ask before any deal is approved.</p>
-    <a class="pill" href="#water">See the numbers</a>
-    <a class="pill ghost" href="#act">What you can do</a>
-    <div class="badge">An independent briefing by Celaya Solutions Research LLC. Not an official City of El Paso publication. Every number is sourced. Check it yourself.</div>
+    <div class="kick" data-i18n="hero.kick">El Paso, the Sun City &middot; Community Briefing</div>
+    <h1 data-i18n="hero.h1">Data Centers, Water, and Power: The Numbers You Should See</h1>
+    <p data-i18n="hero.p">Giant computer warehouses are coming to our region. We pulled the public records and did the math nobody published. Here is how much water and electricity they need, how much we have, and the one question to ask before any deal is approved.</p>
+    <a class="pill" href="#water" data-i18n="hero.cta1">See the numbers</a>
+    <a class="pill ghost" href="#act" data-i18n="hero.cta2">What you can do</a>
+    <div class="badge" data-i18n="hero.badge">An independent briefing by Celaya Solutions Research LLC. Not an official City of El Paso publication. Every number is sourced. Check it yourself.</div>
   </div>
 </header>
+
+<main id="main">
 
 <!-- INTRO -->
 <section id="why">
   <div class="wrap">
-    <p class="lead">A data center is a huge building full of computers. They run hot, so they drink water and power to stay cool and switched on. We are not against technology. We build it. The question is simple and fair: <strong>do we have enough water and power for this, and who pays if we do not?</strong></p>
-    <p>This page is written by an El Paso research lab, in plain language, so any resident can understand what is happening and speak up. The full legal and technical documents are linked at the bottom.</p>
+    <p class="lead" data-i18n="why.lead">A data center is a huge building full of computers. They run hot, so they drink water and power to stay cool and switched on. We are not against technology. We build it. The question is simple and fair: <strong>do we have enough water and power for this, and who pays if we do not?</strong></p>
+    <p data-i18n="why.p2">This page is written by an El Paso research lab, in plain language, so any resident can understand what is happening and speak up. The full legal and technical documents are linked at the bottom.</p>
   </div>
 </section>
 
 <!-- WHAT'S HAPPENING NOW -->
 <section id="now">
   <div class="wrap">
-    <div class="eyebrow">What's Happening Now</div>
-    <h2>The decisions are being made this month</h2>
+    <div class="eyebrow" data-i18n="now.eyebrow">What's Happening Now</div>
+    <h2 data-i18n="now.h2">The decisions are being made this month</h2>
     <div class="alert">
-      <span class="when">Vote: Monday, June 9, 2026</span>
-      <div class="head">City Council is being asked to look at canceling the Meta deal.</div>
-      <p style="margin-bottom:0">Two Council members (Josh Acevedo, District 2, and Lily Lim&oacute;n, District 7) put an item on the <strong>June 9</strong> agenda asking the city to study ending the 2023 tax-break agreement with Meta. The Mayor is against canceling and has warned it could lead to lawsuits. City lawyers say the deal is "legally binding" and hard to undo. <strong>This is the meeting to show up to or write about.</strong> Agendas: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</p>
+      <span class="when" data-i18n="now.alertWhen">Vote: Monday, June 9, 2026</span>
+      <div class="head" data-i18n="now.alertHead">City Council is being asked to look at canceling the Meta deal.</div>
+      <p style="margin-bottom:0" data-i18n="now.alertBody">Two Council members (Josh Acevedo, District 2, and Lily Lim&oacute;n, District 7) put an item on the <strong>June 9</strong> agenda asking the city to study ending the 2023 tax-break agreement with Meta. The Mayor is against canceling and has warned it could lead to lawsuits. City lawyers say the deal is "legally binding" and hard to undo. <strong>This is the meeting to show up to or write about.</strong> Agendas: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</p>
     </div>
-    <p class="lead">Here is the short story of how we got here, so you can follow what comes next.</p>
+    <p class="lead" data-i18n="now.lead">Here is the short story of how we got here, so you can follow what comes next.</p>
     <ul class="tl">
-      <li><div class="d">December 5, 2023</div><div class="e">City Council voted to give Meta an <strong>80% property-tax break</strong> for decades, plus $12.5M in city money, for a $10 billion data center promising about 300 permanent jobs.</div></li>
-      <li><div class="d">May 21&ndash;26, 2026</div><div class="e">Council voted <strong>unanimously to stop giving tax breaks</strong> to future data centers and released a <strong>draft Data Center Policy Framework</strong> (a 33-page policy paper) for public comment.</div></li>
-      <li><div class="d">June 2&ndash;3, 2026</div><div class="e">A push began to cancel the existing Meta deal. City officials said the city <strong>cannot simply walk away</strong> from a signed 2023 contract without legal risk.</div></li>
-      <li class="next"><div class="d">Monday, June 9, 2026 &mdash; coming up</div><div class="e">Council takes up the request to <strong>explore terminating the Meta agreement</strong>. Public comment is open at City Hall and online.</div></li>
-      <li class="next"><div class="d">July 2026 (expected)</div><div class="e">The Meta data center campus is expected to <strong>begin operating</strong>.</div></li>
+      <li><div class="d" data-i18n="now.tl1d">December 5, 2023</div><div class="e" data-i18n="now.tl1e">City Council voted to give Meta an <strong>80% property-tax break</strong> for decades, plus $12.5M in city money, for a $10 billion data center promising about 300 permanent jobs.</div></li>
+      <li><div class="d" data-i18n="now.tl2d">May 21&ndash;26, 2026</div><div class="e" data-i18n="now.tl2e">Council voted <strong>unanimously to stop giving tax breaks</strong> to future data centers and released a <strong>draft Data Center Policy Framework</strong> (a 33-page policy paper) for public comment.</div></li>
+      <li><div class="d" data-i18n="now.tl3d">June 2&ndash;3, 2026</div><div class="e" data-i18n="now.tl3e">A push began to cancel the existing Meta deal. City officials said the city <strong>cannot simply walk away</strong> from a signed 2023 contract without legal risk.</div></li>
+      <li class="next"><div class="d" data-i18n="now.tl4d">Monday, June 9, 2026 &mdash; coming up</div><div class="e" data-i18n="now.tl4e">Council takes up the request to <strong>explore terminating the Meta agreement</strong>. Public comment is open at City Hall and online.</div></li>
+      <li class="next"><div class="d" data-i18n="now.tl5d">July 2026 (expected)</div><div class="e" data-i18n="now.tl5e">The Meta data center campus is expected to <strong>begin operating</strong>.</div></li>
     </ul>
     <div class="callout" style="margin-top:22px">
-      <div class="q">Why this matters now</div>
-      <p style="margin-bottom:0">The City's draft is a <strong>policy paper</strong> &mdash; a list of good ideas with no teeth. Our draft is an <strong>enforceable city law</strong> with real limits, real penalties, and real proof requirements. The public-comment window is open <em>right now</em>, which is the moment to ask for the stronger version. See <a href="#act">Take Action</a> below.</p>
+      <div class="q" data-i18n="now.whyq">Why this matters now</div>
+      <p style="margin-bottom:0" data-i18n="now.whyp">The City's draft is a <strong>policy paper</strong> &mdash; a list of good ideas with no teeth. Our draft is an <strong>enforceable city law</strong> with real limits, real penalties, and real proof requirements. The public-comment window is open <em>right now</em>, which is the moment to ask for the stronger version. See <a href="#act">Take Action</a> below.</p>
     </div>
   </div>
 </section>
@@ -197,18 +263,18 @@
 <!-- WATER -->
 <section id="water">
   <div class="wrap">
-    <div class="eyebrow">The Water</div>
-    <h2>Three numbers that decide everything</h2>
+    <div class="eyebrow" data-i18n="water.eyebrow">The Water</div>
+    <h2 data-i18n="water.h2">Three numbers that decide everything</h2>
     <div class="cards">
-      <div class="card"><div class="num">105 million</div><div class="lbl">gallons of water El Paso uses every single day right now.</div><div class="src">Texas Tribune, 2025</div></div>
-      <div class="card gold"><div class="num">1.56 million</div><div class="lbl">gallons a day the new data centers could need at full size.</div><div class="src">Do&ntilde;a Ana County MOU; KVIA / El Paso Matters</div></div>
-      <div class="card red"><div class="num">8.7 million</div><div class="lbl">gallons a day. That is our whole leftover cushion.</div><div class="src">U.S. Bureau of Reclamation</div></div>
+      <div class="card"><div class="num" data-i18n="water.c1n">105 million</div><div class="lbl" data-i18n="water.c1l">gallons of water El Paso uses every single day right now.</div><div class="src" data-i18n="water.c1s">Texas Tribune, 2025</div></div>
+      <div class="card gold"><div class="num" data-i18n="water.c2n">1.56 million</div><div class="lbl" data-i18n="water.c2l">gallons a day the new data centers could need at full size.</div><div class="src" data-i18n="water.c2s">Do&ntilde;a Ana County MOU; KVIA / El Paso Matters</div></div>
+      <div class="card red"><div class="num" data-i18n="water.c3n">8.7 million</div><div class="lbl" data-i18n="water.c3l">gallons a day. That is our whole leftover cushion.</div><div class="src" data-i18n="water.c3s">U.S. Bureau of Reclamation</div></div>
     </div>
-    <div class="analogy">The data centers would use only about <strong>1.5% of the water we use now</strong>. That sounds tiny. But it is <strong>17.9% of the cushion we have left</strong>. Think of a paycheck: after rent and bills you have $87 left, and someone asks for $16. That is 1.6% of your pay, but 18% of what is left. That is the line between making it to the end of the month and not.</div>
-    <h3>The question nobody answered</h3>
+    <div class="analogy" data-i18n="water.analogy">The data centers would use only about <strong>1.5% of the water we use now</strong>. That sounds tiny. But it is <strong>17.9% of the cushion we have left</strong>. Think of a paycheck: after rent and bills you have $87 left, and someone asks for $16. That is 1.6% of your pay, but 18% of what is left. That is the line between making it to the end of the month and not.</div>
+    <h3 data-i18n="water.h3">The question nobody answered</h3>
     <div class="callout">
-      <div class="q">"Which water-supply number are you using when you say we have enough, and where is it published?"</div>
-      <p>If you count the water we actually pump and treat each day, we are already at the limit. If you count a bigger number that exists only on paper, there is room. <strong>No official has said which number they used.</strong> If they cannot answer with a source you can check, the decision was based on trust, not math. Trust is not a water source.</p>
+      <div class="q" data-i18n="water.q">"Which water-supply number are you using when you say we have enough, and where is it published?"</div>
+      <p data-i18n="water.qp">If you count the water we actually pump and treat each day, we are already at the limit. If you count a bigger number that exists only on paper, there is room. <strong>No official has said which number they used.</strong> If they cannot answer with a source you can check, the decision was based on trust, not math. Trust is not a water source.</p>
     </div>
   </div>
 </section>
@@ -216,61 +282,66 @@
 <!-- POWER -->
 <section id="power">
   <div class="wrap">
-    <div class="eyebrow">The Power</div>
-    <h2>Our grid is closer to the edge than people think</h2>
+    <div class="eyebrow" data-i18n="power.eyebrow">The Power</div>
+    <h2 data-i18n="power.h2">Our grid is closer to the edge than people think</h2>
     <div class="cards">
-      <div class="card"><div class="num">2,300 MW</div><div class="lbl">the most electricity El Paso Electric can make.</div><div class="src">EPE CEO, 2025</div></div>
-      <div class="card gold"><div class="num">2,173 MW</div><div class="lbl">our highest demand ever, on a 110&deg; summer day.</div><div class="src">EPE, 2020</div></div>
-      <div class="card red"><div class="num">127 MW</div><div class="lbl">the cushion between them. Two data centers alone want 250.</div><div class="src">Celaya load study</div></div>
+      <div class="card"><div class="num" data-i18n="power.c1n">2,300 MW</div><div class="lbl" data-i18n="power.c1l">the most electricity El Paso Electric can make.</div><div class="src" data-i18n="power.c1s">EPE CEO, 2025</div></div>
+      <div class="card gold"><div class="num" data-i18n="power.c2n">2,173 MW</div><div class="lbl" data-i18n="power.c2l">our highest demand ever, on a 110&deg; summer day.</div><div class="src" data-i18n="power.c2s">EPE, 2020</div></div>
+      <div class="card red"><div class="num" data-i18n="power.c3n">127 MW</div><div class="lbl" data-i18n="power.c3l">the cushion between them. Two data centers alone want 250.</div><div class="src" data-i18n="power.c3s">Celaya load study</div></div>
     </div>
-    <p>Two of the three projects (Meta in El Paso and Wiwynn in Socorro) would pull about <strong>250 megawatts</strong> from the grid. That is roughly <strong>double</strong> the cushion we have. To handle it, the utility has proposed <strong>$3.5 billion</strong> in upgrades and a <strong>$22-a-month</strong> rate increase that the City Council rejected.</p>
-    <div class="analogy"><strong>Here is the math you can do yourself.</strong> Capacity 2,300, minus peak 2,173, equals a <strong>127 MW</strong> cushion. Add 250 MW of new data-center load and demand becomes 2,423, which is <em>more</em> than the 2,300 we can make. The grid goes over the line. That is why the upgrades and the rate hike exist. The real question is who should pay for them: the company that caused the need, or you?</div>
+    <p data-i18n="power.p">Two of the three projects (Meta in El Paso and Wiwynn in Socorro) would pull about <strong>250 megawatts</strong> from the grid. That is roughly <strong>double</strong> the cushion we have. To handle it, the utility has proposed <strong>$3.5 billion</strong> in upgrades and a <strong>$22-a-month</strong> rate increase that the City Council rejected.</p>
+    <div class="analogy" data-i18n="power.analogy"><strong>Here is the math you can do yourself.</strong> Capacity 2,300, minus peak 2,173, equals a <strong>127 MW</strong> cushion. Add 250 MW of new data-center load and demand becomes 2,423, which is <em>more</em> than the 2,300 we can make. The grid goes over the line. That is why the upgrades and the rate hike exist. The real question is who should pay for them: the company that caused the need, or you?</div>
   </div>
 </section>
 
 <!-- BUILDING -->
 <section id="building">
   <div class="wrap">
-    <div class="eyebrow">What Is Being Built</div>
-    <h2>Three projects, two states, one shared basin</h2>
+    <div class="eyebrow" data-i18n="build.eyebrow">What Is Being Built</div>
+    <h2 data-i18n="build.h2">Three projects, two states, one shared basin</h2>
     <table>
-      <tr><th>Project</th><th>Where</th><th>Water (full size)</th><th>Power</th></tr>
-      <tr><td>Meta</td><td>Northeast El Paso, TX</td><td>up to 1.5 million gal/day</td><td>~100 MW from the grid</td></tr>
-      <tr><td>Wiwynn</td><td>Socorro, TX</td><td>not yet public</td><td>~150 MW from the grid</td></tr>
-      <tr><td>Project Jupiter (Oracle / OpenAI)</td><td>Do&ntilde;a Ana County, NM</td><td>claimed 20,000&ndash;60,000 gal/day</td><td>its own gas plant, up to 2,880 MW</td></tr>
+      <caption class="vh" data-i18n="build.caption">The three data-center projects in the El Paso region, with their water and power needs.</caption>
+      <thead>
+        <tr><th scope="col" data-i18n="build.th1">Project</th><th scope="col" data-i18n="build.th2">Where</th><th scope="col" data-i18n="build.th3">Water (full size)</th><th scope="col" data-i18n="build.th4">Power</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Meta</td><td data-i18n="build.r1b">Northeast El Paso, TX</td><td data-i18n="build.r1c">up to 1.5 million gal/day</td><td data-i18n="build.r1d">~100 MW from the grid</td></tr>
+        <tr><td>Wiwynn</td><td data-i18n="build.r2b">Socorro, TX</td><td data-i18n="build.r2c">not yet public</td><td data-i18n="build.r2d">~150 MW from the grid</td></tr>
+        <tr><td data-i18n="build.r3a">Project Jupiter (Oracle / OpenAI)</td><td data-i18n="build.r3b">Do&ntilde;a Ana County, NM</td><td data-i18n="build.r3c">claimed 20,000&ndash;60,000 gal/day</td><td data-i18n="build.r3d">its own gas plant, up to 2,880 MW</td></tr>
+      </tbody>
     </table>
-    <p>These sit on the <strong>same water basin (the Mesilla Bolson) and the same air</strong>. Yet no public study adds the three of them together. Project Jupiter alone would run a <strong>natural-gas power plant</strong> around the clock, and its permit filings describe hundreds of tons of air pollution and millions of tons of greenhouse gases per year. The community in New Mexico is challenging it in court (Case No. D-307-CV-2025-02766).</p>
-    <div class="disc">A note on fairness: this briefing does not single out any one company. Each project is following the rules that exist today. The point is that the rules are too weak, and a fair fix applies the same standards to every large data center.</div>
+    <p data-i18n="build.p">These sit on the <strong>same water basin (the Mesilla Bolson) and the same air</strong>. Yet no public study adds the three of them together. Project Jupiter alone would run a <strong>natural-gas power plant</strong> around the clock, and its permit filings describe hundreds of tons of air pollution and millions of tons of greenhouse gases per year. The community in New Mexico is challenging it in court (Case No. D-307-CV-2025-02766).</p>
+    <div class="disc" data-i18n="build.note">A note on fairness: this briefing does not single out any one company. Each project is following the rules that exist today. The point is that the rules are too weak, and a fair fix applies the same standards to every large data center.</div>
   </div>
 </section>
 
 <!-- THE FIX -->
 <section id="rule">
   <div class="wrap">
-    <div class="eyebrow">The Fix</div>
-    <h2>What a fair city rule would do</h2>
-    <p>We drafted a model ordinance (a city law) that sets clear, equal terms for any large data center. It does not ban them. It makes them prove they will not harm our water and power, and pay their own way.</p>
+    <div class="eyebrow" data-i18n="fix.eyebrow">The Fix</div>
+    <h2 data-i18n="fix.h2">What a fair city rule would do</h2>
+    <p data-i18n="fix.p">We drafted a model ordinance (a city law) that sets clear, equal terms for any large data center. It does not ban them. It makes them prove they will not harm our water and power, and pay their own way.</p>
     <ul>
-      <li><strong>Public hearing and Council vote</strong> (a special permit) for every big data center. No more quiet approvals.</li>
-      <li>Keep them <strong>1,000 feet</strong> from homes, schools, parks, hospitals, and churches.</li>
-      <li><strong>Cap their water</strong>, require recycled water for cooling, and <strong>measure and publish</strong> use every three months.</li>
-      <li>Make them <strong>pay 100% of the power and water upgrades they cause</strong>, so your bill does not rise to cover them.</li>
-      <li>Require a <strong>cleanup bond</strong> before they open, so an empty building never becomes the public's problem.</li>
-      <li><strong>Daily fines</strong> and loss of permit if they break the rules.</li>
+      <li data-i18n="fix.li1"><strong>Public hearing and Council vote</strong> (a special permit) for every big data center. No more quiet approvals.</li>
+      <li data-i18n="fix.li2">Keep them <strong>1,000 feet</strong> from homes, schools, parks, hospitals, and churches.</li>
+      <li data-i18n="fix.li3"><strong>Cap their water</strong>, require recycled water for cooling, and <strong>measure and publish</strong> use every three months.</li>
+      <li data-i18n="fix.li4">Make them <strong>pay 100% of the power and water upgrades they cause</strong>, so your bill does not rise to cover them.</li>
+      <li data-i18n="fix.li5">Require a <strong>cleanup bond</strong> before they open, so an empty building never becomes the public's problem.</li>
+      <li data-i18n="fix.li6"><strong>Daily fines</strong> and loss of permit if they break the rules.</li>
     </ul>
-    <p>It is written to hold up in court: facially neutral, grounded in sourced facts, and built on existing federal, state, and Texas law. The full ordinance and the evidence behind it are in the <a href="#docs">Documents</a> section.</p>
+    <p data-i18n="fix.p2">It is written to hold up in court: facially neutral, grounded in sourced facts, and built on existing federal, state, and Texas law. The full ordinance and the evidence behind it are in the <a href="#docs">Documents</a> section.</p>
 
-    <h3>What each part does, in plain words</h3>
-    <p>A city law is split into "articles." Here is what each one does, with no legal jargon.</p>
+    <h3 data-i18n="fix.h3">What each part does, in plain words</h3>
+    <p data-i18n="fix.h3p">A city law is split into "articles." Here is what each one does, with no legal jargon.</p>
     <div class="artgrid">
-      <div class="art"><div class="t">1. Why the rule exists</div><p>Protect our water, keep utility bills fair, guard against noise, pollution, and fire, and make the company pay its own costs. It says plainly: we are not banning data centers.</p></div>
-      <div class="art"><div class="t">2. What counts as "big"</div><p>A data center that uses <strong>40 MW</strong> or more of computer power, or <strong>100 MW</strong> or more of total electricity. Cross either line and the rules apply. No arguing your way out with a nice efficiency score.</p></div>
-      <div class="art"><div class="t">3. Where it can go</div><p>Only in heavy commercial/industrial zones, and only with a <strong>special permit</strong> &mdash; a public hearing and a Council vote every time. Plus the <strong>1,000-foot</strong> buffer from homes, schools, parks, hospitals, and churches.</p></div>
-      <div class="art"><div class="t">4. The actual limits</div><p>A water cap, recycled water for cooling, clean power on the grid, air permits for generators, a noise limit, and the big one: the company pays <strong>100%</strong> of the upgrades it causes. None of it lands on your bill.</p></div>
-      <div class="art"><div class="t">5. Proof, not promises</div><p>Real-time meters on all water and power, a public report <strong>every three months</strong>, and an outside audit <strong>every year</strong> &mdash; paid for by the company. A rule you cannot measure is just a wish.</p></div>
-      <div class="art"><div class="t">6. Teeth</div><p>Every day a rule is broken counts separately, with fines up to <strong>$2,000 a day</strong> (the most Texas law allows). The city can sue and revoke the permit. No permit, no operating.</p></div>
-      <div class="art"><div class="t">7. Clean up after yourself</div><p>Before it opens, the company posts a <strong>bond worth 100%</strong> of the cost to tear the building down and restore the land. If it walks away, the public is not stuck with an empty shell.</p></div>
-      <div class="art"><div class="t">8. Built to survive court</div><p>If a judge strikes one part, the rest still stands, and the stricter rule wins in a conflict. Sixteen blanks are left for Council to set the exact local numbers.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a1t">1. Why the rule exists</div><p data-i18n="fix.a1p">Protect our water, keep utility bills fair, guard against noise, pollution, and fire, and make the company pay its own costs. It says plainly: we are not banning data centers.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a2t">2. What counts as "big"</div><p data-i18n="fix.a2p">A data center that uses <strong>40 MW</strong> or more of computer power, or <strong>100 MW</strong> or more of total electricity. Cross either line and the rules apply. No arguing your way out with a nice efficiency score.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a3t">3. Where it can go</div><p data-i18n="fix.a3p">Only in heavy commercial/industrial zones, and only with a <strong>special permit</strong> &mdash; a public hearing and a Council vote every time. Plus the <strong>1,000-foot</strong> buffer from homes, schools, parks, hospitals, and churches.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a4t">4. The actual limits</div><p data-i18n="fix.a4p">A water cap, recycled water for cooling, clean power on the grid, air permits for generators, a noise limit, and the big one: the company pays <strong>100%</strong> of the upgrades it causes. None of it lands on your bill.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a5t">5. Proof, not promises</div><p data-i18n="fix.a5p">Real-time meters on all water and power, a public report <strong>every three months</strong>, and an outside audit <strong>every year</strong> &mdash; paid for by the company. A rule you cannot measure is just a wish.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a6t">6. Teeth</div><p data-i18n="fix.a6p">Every day a rule is broken counts separately, with fines up to <strong>$2,000 a day</strong> (the most Texas law allows). The city can sue and revoke the permit. No permit, no operating.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a7t">7. Clean up after yourself</div><p data-i18n="fix.a7p">Before it opens, the company posts a <strong>bond worth 100%</strong> of the cost to tear the building down and restore the land. If it walks away, the public is not stuck with an empty shell.</p></div>
+      <div class="art"><div class="t" data-i18n="fix.a8t">8. Built to survive court</div><p data-i18n="fix.a8p">If a judge strikes one part, the rest still stands, and the stricter rule wins in a conflict. Sixteen blanks are left for Council to set the exact local numbers.</p></div>
     </div>
   </div>
 </section>
@@ -278,49 +349,65 @@
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap">
-    <div class="eyebrow">Straight Answers</div>
-    <h2>The hard questions, answered plainly</h2>
-    <p class="lead">These are the questions people ask most. Use the answers when you talk to neighbors or your Council member.</p>
+    <div class="eyebrow" data-i18n="faq.eyebrow">Straight Answers</div>
+    <h2 data-i18n="faq.h2">The hard questions, answered plainly</h2>
+    <p class="lead" data-i18n="faq.lead">These are the questions people ask most. Use the answers when you talk to neighbors or your Council member.</p>
 
-    <details class="faq"><summary>Are you trying to ban data centers?</summary><div class="body">No. We are asking for a permit, clear limits, and accountability. A company can still build if it meets the terms. "Prove you won't take the water and power we need, and pay your own way."</div></details>
+    <details class="faq"><summary data-i18n="faq.q1">Are you trying to ban data centers?</summary><div class="body" data-i18n="faq.a1">No. We are asking for a permit, clear limits, and accountability. A company can still build if it meets the terms. "Prove you won't take the water and power we need, and pay your own way."</div></details>
 
-    <details class="faq"><summary>Are you targeting Meta or one company?</summary><div class="body">No. The rules apply to every big data center the same way. That is on purpose &mdash; it is fair, and it is what makes the law hold up in court.</div></details>
+    <details class="faq"><summary data-i18n="faq.q2">Are you targeting Meta or one company?</summary><div class="body" data-i18n="faq.a2">No. The rules apply to every big data center the same way. That is on purpose &mdash; it is fair, and it is what makes the law hold up in court.</div></details>
 
-    <details class="faq"><summary>Won't this scare away jobs and money?</summary><div class="body">A data center is mostly a building full of machines. It brings a lot of <em>construction</em> jobs but few permanent ones &mdash; the Meta project lists about 300. The rule just makes sure those few jobs don't come at the cost of everyone's water and power bills. Serious companies can meet basic standards.</div></details>
+    <details class="faq"><summary data-i18n="faq.q3">Won't this scare away jobs and money?</summary><div class="body" data-i18n="faq.a3">A data center is mostly a building full of machines. It brings a lot of <em>construction</em> jobs but few permanent ones &mdash; the Meta project lists about 300. The rule just makes sure those few jobs don't come at the cost of everyone's water and power bills. Serious companies can meet basic standards.</div></details>
 
-    <details class="faq"><summary>Don't we have plenty of water?</summary><div class="body">It depends on which number you use. If you count the water we actually pump and treat today, we are near the limit. Officials have never said which number they used to decide we have enough. That is the question to ask.</div></details>
+    <details class="faq"><summary data-i18n="faq.q4">Don't we have plenty of water?</summary><div class="body" data-i18n="faq.a4">It depends on which number you use. If you count the water we actually pump and treat today, we are near the limit. Officials have never said which number they used to decide we have enough. That is the question to ask.</div></details>
 
-    <details class="faq"><summary>Isn't the state already handling this?</summary><div class="body">Not for El Paso. The big new state law (Senate Bill 6) only covers the ERCOT power grid. El Paso is on the separate Western grid, so SB 6 does not protect us. The City has to act on its own.</div></details>
+    <details class="faq"><summary data-i18n="faq.q5">Isn't the state already handling this?</summary><div class="body" data-i18n="faq.a5">Not for El Paso. The big new state law (Senate Bill 6) only covers the ERCOT power grid. El Paso is on the separate Western grid, so SB 6 does not protect us. The City has to act on its own.</div></details>
 
-    <details class="faq"><summary>Why make them pay for the upgrades?</summary><div class="body">Because if they don't, you do &mdash; through higher utility bills. The utility floated $3.5 billion in upgrades and a $22-a-month rate increase that Council rejected. "Pay your own way" keeps the cost on the company that caused the need.</div></details>
+    <details class="faq"><summary data-i18n="faq.q6">Why make them pay for the upgrades?</summary><div class="body" data-i18n="faq.a6">Because if they don't, you do &mdash; through higher utility bills. The utility floated $3.5 billion in upgrades and a $22-a-month rate increase that Council rejected. "Pay your own way" keeps the cost on the company that caused the need.</div></details>
 
-    <details class="faq"><summary>Can the City just cancel the Meta deal?</summary><div class="body">Not easily. The 2023 agreement is a signed, legally binding contract. City lawyers warn that walking away could mean years of lawsuits and big damages. That is exactly why a strong, equal rule going forward matters: it sets clear terms <em>before</em> the next deal is signed.</div></details>
+    <details class="faq"><summary data-i18n="faq.q7">Can the City just cancel the Meta deal?</summary><div class="body" data-i18n="faq.a7">Not easily. The 2023 agreement is a signed, legally binding contract. City lawyers warn that walking away could mean years of lawsuits and big damages. That is exactly why a strong, equal rule going forward matters: it sets clear terms <em>before</em> the next deal is signed.</div></details>
 
-    <details class="faq"><summary>What is "PUE" and "WUE"? Do they let companies dodge the rules?</summary><div class="body">They are efficiency scores (for power and water). Under our draft they are <strong>for reporting only</strong>. A company cannot use a nice-sounding efficiency number to escape the size limits. The size is what counts.</div></details>
+    <details class="faq"><summary data-i18n="faq.q8">What is "PUE" and "WUE"? Do they let companies dodge the rules?</summary><div class="body" data-i18n="faq.a8">They are efficiency scores (for power and water). Under our draft they are <strong>for reporting only</strong>. A company cannot use a nice-sounding efficiency number to escape the size limits. The size is what counts.</div></details>
   </div>
 </section>
 
 <!-- ACTION -->
 <section id="act">
   <div class="wrap">
-    <div class="eyebrow">Take Action</div>
-    <h2>What you can do this week</h2>
+    <div class="eyebrow" data-i18n="act.eyebrow">Take Action</div>
+    <h2 data-i18n="act.h2">What you can do this week</h2>
     <div class="do">
       <ul>
-        <li><strong>Comment on the City's draft &mdash; the window is open now.</strong> The City put its draft Data Center Policy Framework online for public feedback. Read it and leave a comment directly at <a href="https://epcap.konveio.com/draft-data-center-policy-framework" target="_blank" rel="noopener">epcap.konveio.com/draft-data-center-policy-framework</a> (also linked from <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>). Ask for an <em>enforceable</em> ordinance, not just a policy paper.</li>
-        <li><strong>Show up June 9.</strong> Council takes up the Meta agreement on <strong>Monday, June 9, 2026</strong>. Sign up to speak (three minutes) or send a written comment. Agendas and sign-up: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</li>
-        <li><strong>Ask the one question</strong> (above) of your City Council member and county commissioner: <em>which water-supply number, and where is it published?</em> Make them show the number.</li>
-        <li><strong>File an open-records request.</strong> Ask for the supply figure and any cost or load studies behind the approvals, at the El Paso Public Information Center: <a href="https://elpaso.govqa.us" target="_blank" rel="noopener">elpaso.govqa.us</a>. Records create a paper trail.</li>
-        <li><strong>Share this page</strong> with your neighbors, your church, and small-business owners.</li>
+        <li data-i18n="act.i1"><strong>Comment on the City's draft &mdash; the window is open now.</strong> The City put its draft Data Center Policy Framework online for public feedback. Read it and leave a comment directly at <a href="https://epcap.konveio.com/draft-data-center-policy-framework" target="_blank" rel="noopener">epcap.konveio.com/draft-data-center-policy-framework</a> (also linked from <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>). Ask for an <em>enforceable</em> ordinance, not just a policy paper.</li>
+        <li data-i18n="act.i2"><strong>Show up June 9.</strong> Council takes up the Meta agreement on <strong>Monday, June 9, 2026</strong>. Sign up to speak (three minutes) or send a written comment. Agendas and sign-up: <a href="https://elpasotexas.legistar.com" target="_blank" rel="noopener">elpasotexas.legistar.com</a>.</li>
+        <li data-i18n="act.i3"><strong>Ask the one question</strong> (above) of your City Council member and county commissioner: <em>which water-supply number, and where is it published?</em> Make them show the number.</li>
+        <li data-i18n="act.i4"><strong>File an open-records request.</strong> Ask for the supply figure and any cost or load studies behind the approvals, at the El Paso Public Information Center: <a href="https://elpaso.govqa.us" target="_blank" rel="noopener">elpaso.govqa.us</a>. Records create a paper trail.</li>
+        <li data-i18n="act.i5"><strong>Share this page</strong> with your neighbors, your church, and small-business owners.</li>
       </ul>
     </div>
-    <h3>The five asks (say these every time)</h3>
+
+    <h3 data-i18n="act.contactsh">Email your City Council member</h3>
+    <p data-i18n="act.contactsp">You vote for one of these eight district representatives. A short, polite email that asks the one question carries real weight. Find your district at <a href="https://www.elpasotexas.gov/city-council/" target="_blank" rel="noopener">elpasotexas.gov/city-council</a>.</p>
+    <div class="contacts">
+      <a href="mailto:mayor@elpasotexas.gov"><span class="who">Mayor Renard Johnson</span><br><span class="mail">mayor@elpasotexas.gov</span></a>
+      <a href="mailto:district1@elpasotexas.gov"><span class="who">District 1 &middot; Alejandra Ch&aacute;vez</span><br><span class="mail">district1@elpasotexas.gov</span></a>
+      <a href="mailto:district2@elpasotexas.gov"><span class="who">District 2 &middot; Dr. Josh Acevedo</span><br><span class="mail">district2@elpasotexas.gov</span></a>
+      <a href="mailto:district3@elpasotexas.gov"><span class="who">District 3 &middot; Deanna Maldonado-Rocha</span><br><span class="mail">district3@elpasotexas.gov</span></a>
+      <a href="mailto:district4@elpasotexas.gov"><span class="who">District 4 &middot; Cynthia Boyar Trejo</span><br><span class="mail">district4@elpasotexas.gov</span></a>
+      <a href="mailto:district5@elpasotexas.gov"><span class="who">District 5 &middot; Ivan Ni&ntilde;o</span><br><span class="mail">district5@elpasotexas.gov</span></a>
+      <a href="mailto:district6@elpasotexas.gov"><span class="who">District 6 &middot; Art Fierro</span><br><span class="mail">district6@elpasotexas.gov</span></a>
+      <a href="mailto:district7@elpasotexas.gov"><span class="who">District 7 &middot; Lily Lim&oacute;n</span><br><span class="mail">district7@elpasotexas.gov</span></a>
+      <a href="mailto:district8@elpasotexas.gov"><span class="who">District 8 &middot; Chris Canales</span><br><span class="mail">district8@elpasotexas.gov</span></a>
+      <a href="mailto:cityclerk@elpasotexas.gov"><span class="who" data-i18n="act.clerk">City Clerk (put it on the record)</span><br><span class="mail">cityclerk@elpasotexas.gov</span></a>
+    </div>
+
+    <h3 data-i18n="act.asksh">The five asks (say these every time)</h3>
     <ol class="asks">
-      <li>Adopt enforceable standards, not just a policy paper.</li>
-      <li>Require a <strong>cumulative</strong> water-and-power study before any approval.</li>
-      <li>Make data centers <strong>pay their own</strong> upgrade costs, with no rate hikes on residents.</li>
-      <li>Require a <strong>teardown bond</strong> before they open.</li>
-      <li><strong>Publish the supply number.</strong> If you cannot show the math, do not approve.</li>
+      <li data-i18n="act.ask1">Adopt enforceable standards, not just a policy paper.</li>
+      <li data-i18n="act.ask2">Require a <strong>cumulative</strong> water-and-power study before any approval.</li>
+      <li data-i18n="act.ask3">Make data centers <strong>pay their own</strong> upgrade costs, with no rate hikes on residents.</li>
+      <li data-i18n="act.ask4">Require a <strong>teardown bond</strong> before they open.</li>
+      <li data-i18n="act.ask5"><strong>Publish the supply number.</strong> If you cannot show the math, do not approve.</li>
     </ol>
   </div>
 </section>
@@ -328,54 +415,253 @@
 <!-- DOCUMENTS -->
 <section id="docs">
   <div class="wrap">
-    <div class="eyebrow">The Receipts</div>
-    <h2>Documents you can read and share</h2>
-    <p>Everything here is public and free to use. The legal documents are drafts prepared for community and Council use, and should be reviewed by counsel before any official action.</p>
+    <div class="eyebrow" data-i18n="docs.eyebrow">The Receipts</div>
+    <h2 data-i18n="docs.h2">Documents you can read and share</h2>
+    <p data-i18n="docs.p">Everything here is public and free to use. The legal documents are drafts prepared for community and Council use, and should be reviewed by counsel before any official action.</p>
     <div class="docs">
-      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_DRAFT.docx"><div class="t">Draft Data Center Ordinance</div><div class="d">The full model city law: definitions, permits, water and power limits, enforcement, cleanup bonds.</div><div class="x">Word document</div></a>
-      <a class="doc" href="documents/Project_Jupiter_Evidence_Record.docx"><div class="t">Evidence Record</div><div class="d">The fact brief, water-balance math, timeline, and index of 68 public records behind the numbers.</div><div class="x">Word document</div></a>
-      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_CROSSWALK.docx"><div class="t">Crosswalk</div><div class="d">How the model ordinance maps to the City's own draft framework, section by section.</div><div class="x">Word document</div></a>
-      <a class="doc" href="explainer.html"><div class="t">One-Page Explainer</div><div class="d">A short, printable version of this briefing for handouts and tabling.</div><div class="x">Open page &rarr;</div></a>
+      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_DRAFT.docx"><div class="t" data-i18n="docs.d1t">Draft Data Center Ordinance</div><div class="d" data-i18n="docs.d1d">The full model city law: definitions, permits, water and power limits, enforcement, cleanup bonds.</div><div class="x" data-i18n="docs.word">Word document</div></a>
+      <a class="doc" href="documents/Project_Jupiter_Evidence_Record.docx"><div class="t" data-i18n="docs.d2t">Evidence Record</div><div class="d" data-i18n="docs.d2d">The fact brief, water-balance math, timeline, and index of 68 public records behind the numbers.</div><div class="x" data-i18n="docs.word2">Word document</div></a>
+      <a class="doc" href="documents/El_Paso_Data_Center_Ordinance_CROSSWALK.docx"><div class="t" data-i18n="docs.d3t">Crosswalk</div><div class="d" data-i18n="docs.d3d">How the model ordinance maps to the City's own draft framework, section by section.</div><div class="x" data-i18n="docs.word3">Word document</div></a>
+      <a class="doc" href="explainer.html"><div class="t" data-i18n="docs.d4t">One-Page Explainer</div><div class="d" data-i18n="docs.d4d">A short, printable version of this briefing for handouts and tabling.</div><div class="x" data-i18n="docs.open">Open page &rarr;</div></a>
     </div>
+    <p style="margin-top:18px"><button class="btn" type="button" onclick="window.print()" data-i18n="docs.print">Print or save this page as PDF</button></p>
   </div>
 </section>
 
 <!-- ABOUT THE LAB -->
 <section id="lab">
   <div class="wrap">
-    <div class="eyebrow">Who Did This</div>
-    <h2>About Celaya Solutions Research LLC</h2>
+    <div class="eyebrow" data-i18n="lab.eyebrow">Who Did This</div>
+    <h2 data-i18n="lab.h2">About Celaya Solutions Research LLC</h2>
     <div class="lab">
-      <p>We are an independent research lab in El Paso. We build instruments that make hidden systems visible. When our region started debating billions of dollars in data centers, we did what research is for: we gathered the public records, ran the water and power math, showed our work, and published it for free so anyone can check it.</p>
-      <p>The technical work rests on real experience: more than twelve years in electrical infrastructure, including critical power systems at large data centers, and current work building the switchgear and power distribution equipment that data centers run on. We believe technical guidance to a community should disclose who wrote it and what they know, the same way an engineer stamps a drawing.</p>
-      <p style="margin-bottom:0"><strong>Our promise:</strong> every number has a source, every calculation can be reproduced, and corrections are welcome. If a number here is wrong, show us the source and we will fix it. That is how math works.</p>
+      <p data-i18n="lab.p1">We are an independent research lab in El Paso. We build instruments that make hidden systems visible. When our region started debating billions of dollars in data centers, we did what research is for: we gathered the public records, ran the water and power math, showed our work, and published it for free so anyone can check it.</p>
+      <p data-i18n="lab.p2">The technical work rests on real experience: more than twelve years in electrical infrastructure, including critical power systems at large data centers, and current work building the switchgear and power distribution equipment that data centers run on. We believe technical guidance to a community should disclose who wrote it and what they know, the same way an engineer stamps a drawing.</p>
+      <p style="margin-bottom:0" data-i18n="lab.p3"><strong>Our promise:</strong> every number has a source, every calculation can be reproduced, and corrections are welcome. If a number here is wrong, show us the source and we will fix it. That is how math works.</p>
     </div>
   </div>
 </section>
 
-<!-- SPANISH -->
-<section id="es">
-  <div class="wrap">
-    <div class="eyebrow">En Espa&ntilde;ol</div>
-    <h2>Resumen</h2>
-    <div class="es">
-      <p>Quieren construir centros de datos grandes cerca de El Paso. Usan mucha agua y electricidad. Usamos <strong>105 millones</strong> de galones de agua al d&iacute;a y solo nos sobran <strong>8.7 millones</strong>. Los centros podr&iacute;an usar <strong>1.56 millones</strong>, casi el <strong>18%</strong> de lo que nos sobra. Nuestra red el&eacute;ctrica casi llega a su l&iacute;mite: puede generar 2,300 megavatios y ya lleg&oacute; a 2,173.</p>
-      <p>Pregunta a tu representante: <em>"&iquest;Cu&aacute;l n&uacute;mero de agua usan para decir que hay suficiente, y d&oacute;nde est&aacute; publicado?"</em> Si no pueden mostrar el n&uacute;mero, no deber&iacute;an aprobar.</p>
-      <p style="margin-bottom:0"><strong>Act&uacute;a ahora:</strong> El Concejo Municipal trata el acuerdo con Meta el <strong>lunes 9 de junio de 2026</strong>. Puedes hablar tres minutos o enviar un comentario. La ciudad tambi&eacute;n acepta comentarios sobre su borrador de pol&iacute;tica en <a href="https://epcap.konveio.com/draft-data-center-policy-framework" target="_blank" rel="noopener">epcap.konveio.com</a>. M&aacute;s informaci&oacute;n: <a href="https://www.elpasotexas.gov/data-centers/" target="_blank" rel="noopener">elpasotexas.gov/data-centers</a>.</p>
-    </div>
-    <button class="btn" onclick="window.print()">Print or save this page as PDF</button>
-  </div>
-</section>
+</main>
 
 <!-- SOURCES + FOOTER -->
 <footer>
   <div class="wrap">
-    <h3 style="color:var(--navy-d)">Sources</h3>
-    <p>Water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; New Mexico Environment Department air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: New Mexico Third Judicial District Court, Case No. D-307-CV-2025-02766. City policy timeline and June 9, 2026 Council action: El Paso Matters (May&ndash;June 2026); KVIA (May 26, 2026); City of El Paso Data Center Policy Framework draft and public-comment platform (epcap.konveio.com, 2026). Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
-    <div class="disc">Prepared by <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas. This is an independent community briefing and is <strong>not</strong> an official City of El Paso publication. The legal documents are drafts and are not legal advice; consult counsel before any official action. Content is public domain. Corrections welcome.</div>
-    <p style="color:#8a93a0">&copy; 2026 Celaya Solutions Research LLC &middot; El Paso, Texas &middot; Built to be checked.</p>
+    <h3 style="color:var(--navy-d)" data-i18n="footer.h">Sources</h3>
+    <p data-i18n="footer.sources">Water demand and supply: Texas Tribune (2025); El Paso Water Conservation Plan (2024); U.S. Bureau of Reclamation, Rio Grande Project. Data-center water and power: El Paso Matters and KVIA (2025&ndash;2026); developer presentations; New Mexico Environment Department air-permit applications (2025). Grid figures: El Paso Electric 2024 System Expansion Plan and All-Source RFP (2025); Fitch. Project Jupiter litigation: New Mexico Third Judicial District Court, Case No. D-307-CV-2025-02766. City policy timeline and June 9, 2026 Council action: El Paso Matters (May&ndash;June 2026); KVIA (May 26, 2026); City of El Paso Data Center Policy Framework draft and public-comment platform (epcap.konveio.com, 2026). Water-balance and load analysis: Celaya Solutions Research LLC (2026), public domain and reproducible.</p>
+    <div class="disc" data-i18n="footer.disc">Prepared by <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas. This is an independent community briefing and is <strong>not</strong> an official City of El Paso publication. The legal documents are drafts and are not legal advice; consult counsel before any official action. Content is public domain. Corrections welcome.</div>
+    <p style="color:#5f6b78" data-i18n="footer.copy">&copy; 2026 Celaya Solutions Research LLC &middot; El Paso, Texas &middot; Built to be checked.</p>
   </div>
 </footer>
+
+<div id="vc" aria-hidden="true" hidden></div>
+
+<script>
+(function(){
+  "use strict";
+  var KEY="csLang";
+  var nodes=[].slice.call(document.querySelectorAll("[data-i18n]"));
+  var EN={};
+  nodes.forEach(function(el){EN[el.getAttribute("data-i18n")]=el.innerHTML;});
+
+  /* Spanish strings. Only keys that differ from English are listed; anything missing falls back to English. */
+  var ES={
+    "meta.title":"Centros de datos de El Paso: agua, energ&iacute;a y lo que significa para usted",
+    "skip":"Saltar al contenido principal",
+    "nav.now":"Lo que pasa ahora","nav.water":"Agua","nav.power":"Energ&iacute;a","nav.coming":"Lo que viene","nav.fix":"La soluci&oacute;n","nav.qa":"Preguntas","nav.act":"Act&uacute;e","nav.docs":"Documentos",
+    "hero.kick":"El Paso, la Ciudad del Sol &middot; Informe comunitario",
+    "hero.h1":"Centros de datos, agua y energ&iacute;a: los n&uacute;meros que debe ver",
+    "hero.p":"Vienen enormes bodegas llenas de computadoras a nuestra regi&oacute;n. Sacamos los registros p&uacute;blicos e hicimos las cuentas que nadie public&oacute;. Aqu&iacute; ver&aacute; cu&aacute;nta agua y electricidad necesitan, cu&aacute;nta tenemos, y la &uacute;nica pregunta que hay que hacer antes de aprobar cualquier acuerdo.",
+    "hero.cta1":"Ver los n&uacute;meros","hero.cta2":"Lo que usted puede hacer",
+    "hero.badge":"Informe independiente de Celaya Solutions Research LLC. No es una publicaci&oacute;n oficial de la Ciudad de El Paso. Cada n&uacute;mero tiene su fuente. Compru&eacute;belo usted mismo.",
+    "why.lead":"Un centro de datos es un edificio enorme lleno de computadoras. Generan mucho calor, as&iacute; que consumen agua y energ&iacute;a para mantenerse fr&iacute;os y encendidos. No estamos en contra de la tecnolog&iacute;a. La construimos. La pregunta es simple y justa: <strong>&iquest;tenemos suficiente agua y energ&iacute;a para esto, y qui&eacute;n paga si no la tenemos?</strong>",
+    "why.p2":"Esta p&aacute;gina la escribi&oacute; un laboratorio de investigaci&oacute;n de El Paso, en lenguaje sencillo, para que cualquier residente entienda lo que est&aacute; pasando y pueda alzar la voz. Los documentos legales y t&eacute;cnicos completos est&aacute;n al final.",
+    "now.eyebrow":"Lo que pasa ahora",
+    "now.h2":"Las decisiones se est&aacute;n tomando este mes",
+    "now.alertWhen":"Votaci&oacute;n: lunes 9 de junio de 2026",
+    "now.alertHead":"Le piden al Concejo Municipal que estudie cancelar el acuerdo con Meta.",
+    "now.alertBody":"Dos miembros del Concejo (Josh Acevedo, Distrito 2, y Lily Lim&oacute;n, Distrito 7) pusieron un punto en la agenda del <strong>9 de junio</strong> pidiendo a la ciudad que estudie terminar el acuerdo de exenci&oacute;n de impuestos de 2023 con Meta. El Alcalde se opone a cancelar y advierte que podr&iacute;a provocar demandas. Los abogados de la ciudad dicen que el acuerdo es &ldquo;legalmente vinculante&rdquo; y dif&iacute;cil de deshacer. <strong>Esta es la reuni&oacute;n a la que hay que asistir o sobre la que hay que escribir.</strong> Agendas: <a href=\"https://elpasotexas.legistar.com\" target=\"_blank\" rel=\"noopener\">elpasotexas.legistar.com</a>.",
+    "now.lead":"Aqu&iacute; est&aacute; la historia corta de c&oacute;mo llegamos hasta aqu&iacute;, para que pueda seguir lo que viene.",
+    "now.tl1d":"5 de diciembre de 2023","now.tl1e":"El Concejo vot&oacute; darle a Meta una <strong>exenci&oacute;n del 80% del impuesto predial</strong> por d&eacute;cadas, m&aacute;s $12.5 millones de dinero de la ciudad, por un centro de datos de $10 mil millones que promete unos 300 empleos permanentes.",
+    "now.tl2d":"21&ndash;26 de mayo de 2026","now.tl2e":"El Concejo vot&oacute; <strong>por unanimidad dejar de dar exenciones de impuestos</strong> a futuros centros de datos y public&oacute; un <strong>borrador del Marco de Pol&iacute;tica de Centros de Datos</strong> (un documento de 33 p&aacute;ginas) para comentarios del p&uacute;blico.",
+    "now.tl3d":"2&ndash;3 de junio de 2026","now.tl3e":"Comenz&oacute; un esfuerzo para cancelar el acuerdo existente con Meta. Funcionarios de la ciudad dijeron que la ciudad <strong>no puede simplemente abandonar</strong> un contrato firmado en 2023 sin riesgo legal.",
+    "now.tl4d":"Lunes 9 de junio de 2026 &mdash; pr&oacute;ximamente","now.tl4e":"El Concejo trata la solicitud de <strong>estudiar la terminaci&oacute;n del acuerdo con Meta</strong>. Los comentarios del p&uacute;blico est&aacute;n abiertos en el Ayuntamiento y en l&iacute;nea.",
+    "now.tl5d":"Julio de 2026 (previsto)","now.tl5e":"Se espera que el campus del centro de datos de Meta <strong>comience a operar</strong>.",
+    "now.whyq":"Por qu&eacute; esto importa ahora",
+    "now.whyp":"El borrador de la Ciudad es un <strong>documento de pol&iacute;tica</strong> &mdash; una lista de buenas ideas sin fuerza legal. Nuestro borrador es una <strong>ley municipal con dientes</strong>: con l&iacute;mites reales, multas reales y pruebas obligatorias. La ventana de comentarios p&uacute;blicos est&aacute; abierta <em>ahora mismo</em>, y este es el momento de pedir la versi&oacute;n m&aacute;s fuerte. Vea <a href=\"#act\">Act&uacute;e</a> abajo.",
+    "water.eyebrow":"El agua",
+    "water.h2":"Tres n&uacute;meros que lo deciden todo",
+    "water.c1n":"105 millones","water.c1l":"galones de agua que El Paso usa cada d&iacute;a ahora mismo.","water.c1s":"Texas Tribune, 2025",
+    "water.c2n":"1.56 millones","water.c2l":"galones al d&iacute;a que los nuevos centros de datos podr&iacute;an necesitar a tama&ntilde;o completo.","water.c2s":"Convenio del Condado de Do&ntilde;a Ana; KVIA / El Paso Matters",
+    "water.c3n":"8.7 millones","water.c3l":"galones al d&iacute;a. Ese es todo el margen que nos queda.","water.c3s":"Oficina de Reclamaci&oacute;n de EE. UU.",
+    "water.analogy":"Los centros de datos usar&iacute;an solo cerca del <strong>1.5% del agua que usamos hoy</strong>. Suena diminuto. Pero es el <strong>17.9% del margen que nos queda</strong>. Piense en un cheque de pago: despu&eacute;s de la renta y las cuentas le quedan $87, y alguien le pide $16. Eso es el 1.6% de su sueldo, pero el 18% de lo que le sobra. Esa es la diferencia entre llegar a fin de mes o no.",
+    "water.h3":"La pregunta que nadie contest&oacute;",
+    "water.q":"&ldquo;&iquest;Cu&aacute;l n&uacute;mero de suministro de agua usan cuando dicen que hay suficiente, y d&oacute;nde est&aacute; publicado?&rdquo;",
+    "water.qp":"Si cuenta el agua que de verdad bombeamos y tratamos cada d&iacute;a, ya estamos en el l&iacute;mite. Si cuenta un n&uacute;mero m&aacute;s grande que solo existe en papel, hay espacio. <strong>Ning&uacute;n funcionario ha dicho cu&aacute;l n&uacute;mero us&oacute;.</strong> Si no pueden responder con una fuente que usted pueda revisar, la decisi&oacute;n se bas&oacute; en confianza, no en matem&aacute;ticas. La confianza no es una fuente de agua.",
+    "power.eyebrow":"La energ&iacute;a",
+    "power.h2":"Nuestra red el&eacute;ctrica est&aacute; m&aacute;s cerca del l&iacute;mite de lo que la gente cree",
+    "power.c1l":"lo m&aacute;ximo de electricidad que El Paso Electric puede generar.","power.c1s":"Director de EPE, 2025",
+    "power.c2l":"nuestra demanda m&aacute;s alta de la historia, en un d&iacute;a de verano de 110&deg;.","power.c2s":"EPE, 2020",
+    "power.c3l":"el margen entre ambos. Dos centros de datos por s&iacute; solos quieren 250.","power.c3s":"Estudio de carga de Celaya",
+    "power.p":"Dos de los tres proyectos (Meta en El Paso y Wiwynn en Socorro) jalar&iacute;an unos <strong>250 megavatios</strong> de la red. Eso es casi el <strong>doble</strong> del margen que tenemos. Para soportarlo, la empresa el&eacute;ctrica propuso <strong>$3.5 mil millones</strong> en mejoras y un aumento de tarifa de <strong>$22 al mes</strong> que el Concejo rechaz&oacute;.",
+    "power.analogy":"<strong>Aqu&iacute; est&aacute;n las cuentas que usted mismo puede hacer.</strong> Capacidad 2,300, menos el pico de 2,173, da un margen de <strong>127 MW</strong>. Agregue 250 MW de nueva carga de centros de datos y la demanda sube a 2,423, que es <em>m&aacute;s</em> de los 2,300 que podemos generar. La red se pasa del l&iacute;mite. Por eso existen las mejoras y el aumento de tarifa. La verdadera pregunta es qui&eacute;n debe pagarlas: la empresa que caus&oacute; la necesidad, o usted?",
+    "build.eyebrow":"Lo que se est&aacute; construyendo",
+    "build.h2":"Tres proyectos, dos estados, una sola cuenca compartida",
+    "build.caption":"Los tres proyectos de centros de datos en la regi&oacute;n de El Paso, con sus necesidades de agua y energ&iacute;a.",
+    "build.th1":"Proyecto","build.th2":"D&oacute;nde","build.th3":"Agua (tama&ntilde;o completo)","build.th4":"Energ&iacute;a",
+    "build.r1b":"Noreste de El Paso, TX","build.r1c":"hasta 1.5 millones gal/d&iacute;a","build.r1d":"~100 MW de la red",
+    "build.r2b":"Socorro, TX","build.r2c":"a&uacute;n no es p&uacute;blico","build.r2d":"~150 MW de la red",
+    "build.r3a":"Project Jupiter (Oracle / OpenAI)","build.r3b":"Condado de Do&ntilde;a Ana, NM","build.r3c":"declara 20,000&ndash;60,000 gal/d&iacute;a","build.r3d":"su propia planta de gas, hasta 2,880 MW",
+    "build.p":"Estos est&aacute;n sobre la <strong>misma cuenca de agua (el Bols&oacute;n de la Mesilla) y el mismo aire</strong>. Sin embargo, ning&uacute;n estudio p&uacute;blico suma los tres juntos. Project Jupiter por s&iacute; solo operar&iacute;a una <strong>planta de energ&iacute;a a gas natural</strong> las 24 horas, y sus permisos describen cientos de toneladas de contaminaci&oacute;n del aire y millones de toneladas de gases de efecto invernadero al a&ntilde;o. La comunidad en Nuevo M&eacute;xico lo est&aacute; impugnando en los tribunales (Caso N&uacute;m. D-307-CV-2025-02766).",
+    "build.note":"Una nota sobre la justicia: este informe no se&ntilde;ala a ninguna empresa en particular. Cada proyecto sigue las reglas que existen hoy. El punto es que las reglas son demasiado d&eacute;biles, y una soluci&oacute;n justa aplica las mismas normas a todo centro de datos grande.",
+    "fix.eyebrow":"La soluci&oacute;n",
+    "fix.h2":"Lo que har&iacute;a una regla municipal justa",
+    "fix.p":"Redactamos una ordenanza modelo (una ley municipal) que fija t&eacute;rminos claros e iguales para cualquier centro de datos grande. No los proh&iacute;be. Los obliga a probar que no da&ntilde;ar&aacute;n nuestra agua ni nuestra energ&iacute;a, y a pagar lo suyo.",
+    "fix.li1":"<strong>Audiencia p&uacute;blica y voto del Concejo</strong> (un permiso especial) para cada centro de datos grande. No m&aacute;s aprobaciones a escondidas.",
+    "fix.li2":"Mantenerlos a <strong>1,000 pies</strong> de casas, escuelas, parques, hospitales e iglesias.",
+    "fix.li3":"<strong>Limitar su consumo de agua</strong>, exigir agua reciclada para enfriamiento, y <strong>medir y publicar</strong> el uso cada tres meses.",
+    "fix.li4":"Obligarlos a <strong>pagar el 100% de las mejoras de energ&iacute;a y agua que causen</strong>, para que su recibo no suba para cubrirlos.",
+    "fix.li5":"Exigir una <strong>fianza de limpieza</strong> antes de abrir, para que un edificio vac&iacute;o nunca se vuelva el problema del p&uacute;blico.",
+    "fix.li6":"<strong>Multas diarias</strong> y p&eacute;rdida del permiso si rompen las reglas.",
+    "fix.p2":"Est&aacute; escrita para resistir en los tribunales: neutral en su redacci&oacute;n, basada en hechos con fuente, y construida sobre leyes federales, estatales y de Texas que ya existen. La ordenanza completa y la evidencia est&aacute;n en la secci&oacute;n de <a href=\"#docs\">Documentos</a>.",
+    "fix.h3":"Qu&eacute; hace cada parte, en palabras sencillas",
+    "fix.h3p":"Una ley municipal se divide en &ldquo;art&iacute;culos&rdquo;. Aqu&iacute; est&aacute; lo que hace cada uno, sin jerga legal.",
+    "fix.a1t":"1. Por qu&eacute; existe la regla","fix.a1p":"Proteger nuestra agua, mantener justos los recibos de servicios, cuidar contra el ruido, la contaminaci&oacute;n y el fuego, y hacer que la empresa pague sus propios costos. Dice claramente: no estamos prohibiendo los centros de datos.",
+    "fix.a2t":"2. Qu&eacute; cuenta como &ldquo;grande&rdquo;","fix.a2p":"Un centro de datos que usa <strong>40 MW</strong> o m&aacute;s de potencia de c&oacute;mputo, o <strong>100 MW</strong> o m&aacute;s de electricidad total. Si cruza cualquiera de las dos l&iacute;neas, aplican las reglas. No hay c&oacute;mo escaparse con un buen puntaje de eficiencia.",
+    "fix.a3t":"3. D&oacute;nde puede ir","fix.a3p":"Solo en zonas comerciales/industriales pesadas, y solo con un <strong>permiso especial</strong> &mdash; una audiencia p&uacute;blica y un voto del Concejo cada vez. M&aacute;s el l&iacute;mite de <strong>1,000 pies</strong> de casas, escuelas, parques, hospitales e iglesias.",
+    "fix.a4t":"4. Los l&iacute;mites de verdad","fix.a4p":"Un tope de agua, agua reciclada para enfriamiento, energ&iacute;a limpia en la red, permisos de aire para los generadores, un l&iacute;mite de ruido, y el m&aacute;s importante: la empresa paga el <strong>100%</strong> de las mejoras que causa. Nada cae en su recibo.",
+    "fix.a5t":"5. Pruebas, no promesas","fix.a5p":"Medidores en tiempo real en toda el agua y la energ&iacute;a, un reporte p&uacute;blico <strong>cada tres meses</strong>, y una auditor&iacute;a externa <strong>cada a&ntilde;o</strong> &mdash; pagada por la empresa. Una regla que no se puede medir es solo un deseo.",
+    "fix.a6t":"6. Dientes","fix.a6p":"Cada d&iacute;a que se rompe una regla cuenta por separado, con multas de hasta <strong>$2,000 al d&iacute;a</strong> (lo m&aacute;ximo que permite la ley de Texas). La ciudad puede demandar y revocar el permiso. Sin permiso, no hay operaci&oacute;n.",
+    "fix.a7t":"7. Limpie lo suyo","fix.a7p":"Antes de abrir, la empresa deposita una <strong>fianza por el 100%</strong> del costo de derribar el edificio y restaurar el terreno. Si se va, el p&uacute;blico no se queda con un cascar&oacute;n vac&iacute;o.",
+    "fix.a8t":"8. Hecha para resistir en los tribunales","fix.a8p":"Si un juez anula una parte, el resto sigue en pie, y la regla m&aacute;s estricta gana en un conflicto. Quedan diecis&eacute;is espacios en blanco para que el Concejo fije los n&uacute;meros locales exactos.",
+    "faq.eyebrow":"Respuestas directas",
+    "faq.h2":"Las preguntas dif&iacute;ciles, contestadas con claridad",
+    "faq.lead":"Estas son las preguntas que la gente hace m&aacute;s. Use las respuestas cuando hable con sus vecinos o con su miembro del Concejo.",
+    "faq.q1":"&iquest;Est&aacute;n tratando de prohibir los centros de datos?","faq.a1":"No. Pedimos un permiso, l&iacute;mites claros y rendici&oacute;n de cuentas. Una empresa todav&iacute;a puede construir si cumple los t&eacute;rminos. &ldquo;Prueben que no se llevar&aacute;n el agua y la energ&iacute;a que necesitamos, y paguen lo suyo.&rdquo;",
+    "faq.q2":"&iquest;Est&aacute;n apuntando contra Meta o una sola empresa?","faq.a2":"No. Las reglas aplican igual a todo centro de datos grande. Es a prop&oacute;sito &mdash; es justo, y es lo que hace que la ley resista en los tribunales.",
+    "faq.q3":"&iquest;No espantar&aacute; esto los empleos y el dinero?","faq.a3":"Un centro de datos es sobre todo un edificio lleno de m&aacute;quinas. Trae muchos empleos de <em>construcci&oacute;n</em> pero pocos permanentes &mdash; el proyecto de Meta menciona unos 300. La regla solo asegura que esos pocos empleos no lleguen a costa del agua y los recibos de luz de todos. Las empresas serias pueden cumplir normas b&aacute;sicas.",
+    "faq.q4":"&iquest;No tenemos suficiente agua?","faq.a4":"Depende de cu&aacute;l n&uacute;mero use. Si cuenta el agua que de verdad bombeamos y tratamos hoy, estamos cerca del l&iacute;mite. Los funcionarios nunca han dicho cu&aacute;l n&uacute;mero usaron para decidir que hay suficiente. Esa es la pregunta que hay que hacer.",
+    "faq.q5":"&iquest;No est&aacute; el estado encarg&aacute;ndose de esto?","faq.a5":"No para El Paso. La gran ley estatal nueva (Senate Bill 6) solo cubre la red el&eacute;ctrica de ERCOT. El Paso est&aacute; en la red del Oeste, aparte, as&iacute; que la SB 6 no nos protege. La Ciudad tiene que actuar por su cuenta.",
+    "faq.q6":"&iquest;Por qu&eacute; hacerlos pagar las mejoras?","faq.a6":"Porque si no lo hacen ellos, lo hace usted &mdash; con recibos de luz m&aacute;s altos. La empresa el&eacute;ctrica plante&oacute; $3.5 mil millones en mejoras y un aumento de $22 al mes que el Concejo rechaz&oacute;. &ldquo;Pagar lo suyo&rdquo; deja el costo en la empresa que caus&oacute; la necesidad.",
+    "faq.q7":"&iquest;Puede la Ciudad simplemente cancelar el acuerdo con Meta?","faq.a7":"No es f&aacute;cil. El acuerdo de 2023 es un contrato firmado y legalmente vinculante. Los abogados de la ciudad advierten que abandonarlo podr&iacute;a significar a&ntilde;os de demandas y da&ntilde;os grandes. Por eso importa una regla fuerte e igual de aqu&iacute; en adelante: fija t&eacute;rminos claros <em>antes</em> de firmar el pr&oacute;ximo acuerdo.",
+    "faq.q8":"&iquest;Qu&eacute; son &ldquo;PUE&rdquo; y &ldquo;WUE&rdquo;? &iquest;Dejan que las empresas esquiven las reglas?","faq.a8":"Son puntajes de eficiencia (de energ&iacute;a y agua). En nuestro borrador son <strong>solo para reportar</strong>. Una empresa no puede usar un buen n&uacute;mero de eficiencia para escapar de los l&iacute;mites de tama&ntilde;o. Lo que cuenta es el tama&ntilde;o.",
+    "act.eyebrow":"Act&uacute;e",
+    "act.h2":"Lo que usted puede hacer esta semana",
+    "act.i1":"<strong>Comente sobre el borrador de la Ciudad &mdash; la ventana est&aacute; abierta ahora.</strong> La Ciudad puso su borrador del Marco de Pol&iacute;tica de Centros de Datos en l&iacute;nea para comentarios del p&uacute;blico. L&eacute;alo y deje un comentario directamente en <a href=\"https://epcap.konveio.com/draft-data-center-policy-framework\" target=\"_blank\" rel=\"noopener\">epcap.konveio.com/draft-data-center-policy-framework</a> (tambi&eacute;n enlazado desde <a href=\"https://www.elpasotexas.gov/data-centers/\" target=\"_blank\" rel=\"noopener\">elpasotexas.gov/data-centers</a>). Pida una ordenanza <em>con fuerza legal</em>, no solo un documento de pol&iacute;tica.",
+    "act.i2":"<strong>Pres&eacute;ntese el 9 de junio.</strong> El Concejo trata el acuerdo con Meta el <strong>lunes 9 de junio de 2026</strong>. Reg&iacute;strese para hablar (tres minutos) o env&iacute;e un comentario por escrito. Agendas y registro: <a href=\"https://elpasotexas.legistar.com\" target=\"_blank\" rel=\"noopener\">elpasotexas.legistar.com</a>.",
+    "act.i3":"<strong>Haga la &uacute;nica pregunta</strong> (arriba) a su miembro del Concejo y a su comisionado del condado: <em>&iquest;cu&aacute;l n&uacute;mero de suministro de agua, y d&oacute;nde est&aacute; publicado?</em> Que muestren el n&uacute;mero.",
+    "act.i4":"<strong>Presente una solicitud de registros p&uacute;blicos.</strong> Pida la cifra de suministro y cualquier estudio de costos o de carga detr&aacute;s de las aprobaciones, en el Centro de Informaci&oacute;n P&uacute;blica de El Paso: <a href=\"https://elpaso.govqa.us\" target=\"_blank\" rel=\"noopener\">elpaso.govqa.us</a>. Los registros crean un rastro en papel.",
+    "act.i5":"<strong>Comparta esta p&aacute;gina</strong> con sus vecinos, su iglesia y los due&ntilde;os de peque&ntilde;os negocios.",
+    "act.contactsh":"Escriba a su miembro del Concejo Municipal",
+    "act.contactsp":"Usted vota por uno de estos ocho representantes de distrito. Un correo corto y cort&eacute;s que haga la &uacute;nica pregunta tiene peso de verdad. Encuentre su distrito en <a href=\"https://www.elpasotexas.gov/city-council/\" target=\"_blank\" rel=\"noopener\">elpasotexas.gov/city-council</a>.",
+    "act.clerk":"Secretaria Municipal (para que quede en acta)",
+    "act.asksh":"Las cinco peticiones (d&iacute;galas siempre)",
+    "act.ask1":"Adoptar normas con fuerza legal, no solo un documento de pol&iacute;tica.",
+    "act.ask2":"Exigir un estudio <strong>acumulativo</strong> de agua y energ&iacute;a antes de cualquier aprobaci&oacute;n.",
+    "act.ask3":"Hacer que los centros de datos <strong>paguen sus propios</strong> costos de mejoras, sin aumentos de tarifa para los residentes.",
+    "act.ask4":"Exigir una <strong>fianza de desmantelamiento</strong> antes de abrir.",
+    "act.ask5":"<strong>Publicar el n&uacute;mero de suministro.</strong> Si no pueden mostrar las cuentas, no aprueben.",
+    "docs.eyebrow":"Los comprobantes",
+    "docs.h2":"Documentos que puede leer y compartir",
+    "docs.p":"Todo aqu&iacute; es p&uacute;blico y de uso libre. Los documentos legales son borradores preparados para uso de la comunidad y del Concejo, y deben ser revisados por un abogado antes de cualquier acci&oacute;n oficial.",
+    "docs.d1t":"Borrador de Ordenanza de Centros de Datos","docs.d1d":"La ley municipal modelo completa: definiciones, permisos, l&iacute;mites de agua y energ&iacute;a, cumplimiento, fianzas de limpieza.","docs.word":"Documento de Word",
+    "docs.d2t":"Registro de Evidencia","docs.d2d":"El informe de hechos, las cuentas del balance de agua, la cronolog&iacute;a, y el &iacute;ndice de 68 registros p&uacute;blicos detr&aacute;s de los n&uacute;meros.","docs.word2":"Documento de Word",
+    "docs.d3t":"Tabla comparativa (Crosswalk)","docs.d3d":"C&oacute;mo la ordenanza modelo corresponde al borrador de la Ciudad, secci&oacute;n por secci&oacute;n.","docs.word3":"Documento de Word",
+    "docs.d4t":"Explicaci&oacute;n de una p&aacute;gina","docs.d4d":"Una versi&oacute;n corta e imprimible de este informe para repartir y para mesas informativas.","docs.open":"Abrir p&aacute;gina &rarr;",
+    "docs.print":"Imprimir o guardar esta p&aacute;gina como PDF",
+    "lab.eyebrow":"Qui&eacute;n hizo esto",
+    "lab.h2":"Acerca de Celaya Solutions Research LLC",
+    "lab.p1":"Somos un laboratorio de investigaci&oacute;n independiente en El Paso. Construimos instrumentos que hacen visibles los sistemas ocultos. Cuando nuestra regi&oacute;n empez&oacute; a debatir miles de millones de d&oacute;lares en centros de datos, hicimos lo que la investigaci&oacute;n debe hacer: reunimos los registros p&uacute;blicos, hicimos las cuentas del agua y la energ&iacute;a, mostramos nuestro trabajo, y lo publicamos gratis para que cualquiera lo revise.",
+    "lab.p2":"El trabajo t&eacute;cnico se apoya en experiencia real: m&aacute;s de doce a&ntilde;os en infraestructura el&eacute;ctrica, incluyendo sistemas de energ&iacute;a cr&iacute;tica en grandes centros de datos, y trabajo actual construyendo el equipo de conmutaci&oacute;n y distribuci&oacute;n de energ&iacute;a con el que funcionan los centros de datos. Creemos que la orientaci&oacute;n t&eacute;cnica a una comunidad debe revelar qui&eacute;n la escribi&oacute; y qu&eacute; sabe, igual que un ingeniero firma y sella un plano.",
+    "lab.p3":"<strong>Nuestra promesa:</strong> cada n&uacute;mero tiene una fuente, cada c&aacute;lculo se puede reproducir, y las correcciones son bienvenidas. Si un n&uacute;mero aqu&iacute; est&aacute; mal, mu&eacute;strenos la fuente y lo corregimos. As&iacute; funcionan las matem&aacute;ticas.",
+    "footer.h":"Fuentes",
+    "footer.sources":"Demanda y suministro de agua: Texas Tribune (2025); Plan de Conservaci&oacute;n de Agua de El Paso (2024); Oficina de Reclamaci&oacute;n de EE. UU., Proyecto del R&iacute;o Grande. Agua y energ&iacute;a de centros de datos: El Paso Matters y KVIA (2025&ndash;2026); presentaciones de los desarrolladores; solicitudes de permiso de aire del Departamento de Medio Ambiente de Nuevo M&eacute;xico (2025). Cifras de la red: Plan de Expansi&oacute;n del Sistema 2024 de El Paso Electric y All-Source RFP (2025); Fitch. Litigio de Project Jupiter: Tribunal del Tercer Distrito Judicial de Nuevo M&eacute;xico, Caso N&uacute;m. D-307-CV-2025-02766. Cronolog&iacute;a de pol&iacute;tica de la Ciudad y acci&oacute;n del Concejo del 9 de junio de 2026: El Paso Matters (mayo&ndash;junio de 2026); KVIA (26 de mayo de 2026); borrador del Marco de Pol&iacute;tica de Centros de Datos de la Ciudad de El Paso y plataforma de comentarios (epcap.konveio.com, 2026). An&aacute;lisis del balance de agua y de carga: Celaya Solutions Research LLC (2026), de dominio p&uacute;blico y reproducible.",
+    "footer.disc":"Preparado por <strong>Celaya Solutions Research LLC</strong>, El Paso, Texas. Este es un informe comunitario independiente y <strong>no</strong> es una publicaci&oacute;n oficial de la Ciudad de El Paso. Los documentos legales son borradores y no son asesor&iacute;a legal; consulte a un abogado antes de cualquier acci&oacute;n oficial. El contenido es de dominio p&uacute;blico. Las correcciones son bienvenidas.",
+    "footer.copy":"&copy; 2026 Celaya Solutions Research LLC &middot; El Paso, Texas &middot; Hecho para ser verificado."
+  };
+
+  /* Past-tense overrides applied automatically once the June 9 meeting has passed. */
+  var PAST={
+    en:{
+      "now.alertWhen":"Update &middot; after June 9, 2026",
+      "now.alertHead":"The June 9 vote has already taken place.",
+      "now.alertBody":"On <strong>June 9, 2026</strong>, City Council took up the request to study ending the 2023 Meta tax-break agreement. The fight is not over: the City's draft policy is still open for comment and more data-center decisions are ahead. Check the latest agendas and outcomes at <a href=\"https://elpasotexas.legistar.com\" target=\"_blank\" rel=\"noopener\">elpasotexas.legistar.com</a>, and keep asking for an enforceable ordinance.",
+      "now.tl4d":"Monday, June 9, 2026",
+      "now.tl4e":"Council took up the request to <strong>explore terminating the Meta agreement</strong>. Watch Legistar for the outcome and the next steps."
+    },
+    es:{
+      "now.alertWhen":"Actualizaci&oacute;n &middot; despu&eacute;s del 9 de junio de 2026",
+      "now.alertHead":"La votaci&oacute;n del 9 de junio ya se realiz&oacute;.",
+      "now.alertBody":"El <strong>9 de junio de 2026</strong>, el Concejo Municipal trat&oacute; la solicitud de estudiar la terminaci&oacute;n del acuerdo de impuestos con Meta de 2023. La lucha no termin&oacute;: el borrador de pol&iacute;tica de la Ciudad sigue abierto a comentarios y vienen m&aacute;s decisiones sobre centros de datos. Revise las agendas y los resultados m&aacute;s recientes en <a href=\"https://elpasotexas.legistar.com\" target=\"_blank\" rel=\"noopener\">elpasotexas.legistar.com</a>, y siga pidiendo una ordenanza con fuerza legal.",
+      "now.tl4d":"Lunes 9 de junio de 2026",
+      "now.tl4e":"El Concejo trat&oacute; la solicitud de <strong>estudiar la terminaci&oacute;n del acuerdo con Meta</strong>. Vigile Legistar para conocer el resultado y los pr&oacute;ximos pasos."
+    }
+  };
+
+  var EVENT_OVER=(function(){try{return new Date().toISOString().slice(0,10) > "2026-06-09";}catch(e){return false;}})();
+
+  function stripTags(s){var d=document.createElement("div");d.innerHTML=s;return d.textContent||d.innerText||"";}
+
+  function apply(lang){
+    if(lang!=="es") lang="en";
+    document.documentElement.lang=lang;
+    nodes.forEach(function(el){
+      var k=el.getAttribute("data-i18n");
+      var v=(lang==="es" && ES[k]!=null)?ES[k]:EN[k];
+      if(v!=null && el.innerHTML!==v) el.innerHTML=v;
+    });
+    if(EVENT_OVER){
+      var p=(lang==="es"?PAST.es:PAST.en);
+      Object.keys(p).forEach(function(k){
+        var el=document.querySelector('[data-i18n="'+k+'"]');
+        if(el) el.innerHTML=p[k];
+      });
+    }
+    try{ var t=(lang==="es"&&ES["meta.title"])?ES["meta.title"]:EN["meta.title"]; if(t) document.title=stripTags(t); }catch(e){}
+    document.querySelectorAll(".langtoggle button").forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-setlang")===lang?"true":"false");
+    });
+  }
+
+  var gate=document.getElementById("langgate");
+  function closeGate(){ if(!gate)return; gate.hidden=true; document.body.style.overflow=""; }
+  function openGate(){ if(!gate)return; gate.hidden=false; document.body.style.overflow="hidden"; var f=gate.querySelector("button"); if(f) f.focus(); }
+  function setLang(lang){ try{localStorage.setItem(KEY,lang);}catch(e){} apply(lang); closeGate(); }
+
+  document.querySelectorAll("[data-setlang]").forEach(function(b){
+    b.addEventListener("click",function(){ setLang(b.getAttribute("data-setlang")); });
+  });
+
+  if(gate){
+    gate.addEventListener("keydown",function(e){
+      if(e.key==="Escape"){ setLang("en"); return; }
+      if(e.key==="Tab"){
+        var b=gate.querySelectorAll("button"); if(!b.length) return;
+        var first=b[0], last=b[b.length-1];
+        if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved==="es"||saved==="en"){ apply(saved); }
+  else { apply("en"); openGate(); }
+
+  /* Subtle global view counter (owner reference). Authoritative analytics live in PostHog. */
+  try{
+    fetch("https://abacus.jasoncameron.dev/hit/celaya-draftpolicy/home")
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        if(!d) return;
+        var n=(d.value!=null)?d.value:d.count;
+        if(n==null) return;
+        var c=document.getElementById("vc");
+        if(c){ c.textContent="· "+Number(n).toLocaleString(); c.hidden=false; }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
 
 </body>
 </html>
